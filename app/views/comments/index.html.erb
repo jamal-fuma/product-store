@@ -1,0 +1,10 @@
+<%= page_title_helper "Comments for #{@bug.human_title}" -%>
+<%= page_description_helper "Comments for  #{h(@bug.description)}" %>
+<%= page_keywords_helper @bug.description %>
+
+<% content_for :content_frame do %>
+<%= render  :partial => 'searches/form' %>
+<div id='placeholder'>
+  <%= comments_list_helper(@bug,@comments) %>
+</div>
+<% end -%>

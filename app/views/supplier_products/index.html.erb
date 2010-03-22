@@ -1,0 +1,46 @@
+<%= page_title_helper %Q{Products supplied by (#{h(@supplier.name)})} %>
+<%= page_description_helper %Q{ #{h(@supplier.name)} described as #{h(@supplier.description)} has a number of products featuring  #{h(@supplier.name)} } %>
+<%= page_keywords_helper @products.map(&:name).join(",") %>
+
+<%= side_menu_helper [@supplier] %>
+<%= side_menu_helper @products, :title => "<h6>Products (#{@products.size})</h6>" %>
+<% content_for :header_content_extra do %>
+ | <%= link_to_remote 'Edit Supplier', 
+  { :url =>  edit_supplier_path(@supplier) ,
+    :method => :get,
+    :update => 'all_suppliers', 
+    :position => :top
+  }, 
+  :href => edit_supplier_path(@supplier) %>
+<% end %>
+
+<% content_for :header_content_follow do %>
+ <%= render  :partial => 'supplier_products/form', 
+              :locals => {:supplier => @supplier} -%>
+<% end %>
+
+<% content_for :content_frame do %>
+  <div id="links_bar">
+  <div>
+  
+
+  <%= render:partial => 'searches/form' %>
+  <%= suppliers_list_helper [@supplier] %> 
+
+  <!-- hackily replace the form url with javascript -->
+  <% form_tag remove_supplier_products_path(@supplier), :method => :delete,
+        :id=>'remove-supplier-product-form', :class=> 'button' do %>
+        <%= submit_tag 'Remove products' %>
+        <div id="products_list" class="shared-list">
+          <%= render  :partial => 'products/list', 
+                      :locals => {:products => @products,
+                                  :reorder_url =>@reorder_url
+                      } -%>
+         </div>
+  <% end %>
+
+<% end -%>
+
+<% content_for :product_list_footer do -%>
+    <%= will_paginate @products %>
+<% end -%>

@@ -1,0 +1,23 @@
+   <!-- list titles -->
+  <%= image_heading_helper :checkbox =>true, :id => 'toggle_images' %>
+  
+  <% 
+    row_proc = ((thumb.blank?) ? 
+          lambda{ |image| image_row_helper(image,:checkbox => true) } :
+          lambda{ |image| image_row_helper(image,:checkbox => true, :image => thumb) })
+ %>
+  <%  if(images && !images.empty?) %>
+   <!-- list items -->
+  <%= sortable_list(images,
+        :url => @reorder_url,
+        :group => 'all',
+        :list_type => 'images',&row_proc) %>
+  <!-- pagination -->
+  <div class="footer">
+    <%= yield :image_list_footer %>
+    &nbsp;
+  </div> 
+ <% else %> 
+  <div id="all_images"></div>
+ <% end %> 
+

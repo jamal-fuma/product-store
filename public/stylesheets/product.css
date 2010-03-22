@@ -1,0 +1,28 @@
+.row .product.col-name
+{
+  font-size:0.7em;
+  max-width:30%;
+  min-width:30%;
+  text-align:left;
+}
+
+.row .product_spacer
+{
+  font-size:0.7em;
+  text-align:left;
+  border-bottom:solid #ccc 0.1em;
+}
+
+.row .product.col-image
+{
+  max-width:10%;
+  min-width:10%;
+  text-align:left;
+}
+.row .product.col-quantity
+{
+  max-width:10%;
+  min-width:10%;
+  text-align:center;
+}
+

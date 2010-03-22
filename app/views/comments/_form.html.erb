@@ -1,0 +1,10 @@
+<% remote_form_for([bug,Comment.new]) do |f| -%>
+  <dl class="comment" title="enter comments here">
+   <% field_set_tag "Comments" do -%>
+      <%= f.text_area :detail -%>
+    <%end-%>
+    </dd>
+   <dt class="comment-title">Click Save or Cancel when finished</dt>
+    <dd class="comment-fields"><%= f.submit_and_cancel('Save','Cancel') -%></dd>
+  </dl>
+<% end -%>

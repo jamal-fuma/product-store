@@ -1,0 +1,2 @@
+page.insert_html :top, 'content_frame', :partial => 'form', :locals => {:image => @image}, :layout => false 
+

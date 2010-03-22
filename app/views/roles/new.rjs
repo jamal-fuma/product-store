@@ -1,0 +1,4 @@
+page.insert_html :top, 'placeholder', 
+                 :partial => 'roles/form',
+                 :locals => {:role => @role},
+                 :layout => false 

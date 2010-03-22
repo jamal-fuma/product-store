@@ -1,0 +1,10 @@
+  <% form_remote_for(bug)  do |f|  %>
+  <% field_set_tag 'Bug Details' do %>
+      <%= f.select :status,Bug.drop_down_list  -%>
+      <%= f.text_field :title %>
+      <%= f.text_area :description %>
+      <%= f.submit_and_cancel('Save','Cancel') -%>
+  <% end %>
+<% end %>
+
+<%= javascript_tag "observe_form_actions();" %> 

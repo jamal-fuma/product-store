@@ -1,0 +1,20 @@
+<%= page_title_helper "Showing details for #{@bug.human_title}"  %>
+<%= page_description_helper h(@bug.description)   %>
+<%= page_keywords_helper h(@bug.description)%>
+
+<%= side_menu_helper [@bug], :method => :title, :func =>:bug_comments_path,:title => "<h6>Comments (#{@comments.size})</h6>" %>
+
+<% content_for :header_content_extra do %>
+<%= edit_bug_link_helper(@bug) %> 
+<% end -%>
+
+<% content_for :content_frame do %>
+<%= render:partial => 'searches/form' %>
+<div id="links_bar"></div>
+<div id='placeholder'>
+  <%= bugs_list_helper([@bug]) %>
+  <%= comments_list_helper(@bug,@comments) %>
+</div>
+<% end -%>
+<%= bug_links(@bug) %>
+

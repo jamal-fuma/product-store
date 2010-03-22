@@ -1,0 +1,12 @@
+<%= new_image_link_helper :update => 'all_images' %>
+
+<% form_tag remove_images_path,:method =>:delete,:id=>'remove-image-form',:class=>'button' do %>
+  <%= submit_tag 'Delete images' %>
+  <div id="images_list" class="shared-list">
+        <%= render  :partial => 'images/list', 
+                    :locals => {
+                      :images => images,
+                      :thumb => thumb
+                     } -%>
+  </div>
+<% end -%>

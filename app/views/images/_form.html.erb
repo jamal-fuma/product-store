@@ -1,0 +1,16 @@
+<% form_remote_for(@image,:html => { :multipart => true} )  do |f|  -%>
+  <% field_set_tag 'Image Details' do -%>
+    <%= f.text_field :name -%>
+    <%= f.text_area :description %>
+    <%= f.file_field :uploaded_data, :label =>'Filename' -%>
+    <% unless @image.new_record? %>
+      <%= image_tag(@image.public_filename,:alt => @image.description) %>
+    <%end%>
+    <% unless @image.new_record? %>
+      <%= image_tag(@image.public_filename(:thumb),:alt => @image.description) %>
+    <%end%>
+<% end -%>
+<%= f.submit_and_cancel('Save','Cancel') -%>
+<% end %>
+
+<%= javascript_tag "observe_form_actions();" %>

@@ -1,0 +1,9 @@
+page.replace_html 'products_list', 
+                  :partial => 'products/list', 
+                  :locals => {:products => @products, :reorder_url => @reorder_url }
+
+
+page.sortable('all_products', :url => @reorder_url, :complete => "update_all();")
+page << "update_all();"
+page.reload if @products.empty?
+page["all_products"].visual_effect :highlight

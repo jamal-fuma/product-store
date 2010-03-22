@@ -1,0 +1,19 @@
+<%= page_title_helper detail_heading(@image.display_name) %>
+<%= page_description_helper %Q{ #{h(@image.display_name)} described as #{h(@image.description)} } %>
+<%= page_keywords_helper h(@image.description)%>
+
+<%= side_menu_helper @categories, :title => "<h6>Categories (#{@categories.size})</h6>" %>
+<%= side_menu_helper @products,     :title => "<h6>Products (#{@products.size})</h6>" %>
+
+<% content_for :header_content_extra do %>
+<%= edit_image_link_helper(@image) %> 
+<% end -%>
+
+<% content_for :content_frame do %>
+<%= render:partial => 'searches/form' %>
+<div id="links_bar"></div>
+<div id='placeholder'>
+  <%= images_list_helper([@image]) %>
+</div>
+<% end -%>
+<%= image_links(@image) %>

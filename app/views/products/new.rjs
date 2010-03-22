@@ -1,0 +1,4 @@
+page.insert_html :top, 'placeholder', 
+                 :partial => 'products/form',
+                 :locals => {:product => @product},
+                 :layout => false 

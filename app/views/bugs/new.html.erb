@@ -1,0 +1,7 @@
+<%= page_title_helper "Creating a new bug" %>
+<%= page_description_helper "Provides a form for submission of bug details" %>
+<%= page_keywords_helper('bug,creation,form') %>
+<% content_for :content_frame do %>
+  <%= link_to 'All bugs', bugs_path -%> 
+  <%= render :partial => 'form', :locals => {:bug => @bug} %>
+<% end %>

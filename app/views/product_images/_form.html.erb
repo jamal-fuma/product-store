@@ -1,0 +1,5 @@
+<!-- hackily replace the form url with javascript -->
+  <% form_tag product_images_path(product), :method => :post, :id=>'assign-product-image-form', :class => 'button' do %>
+      <%= select :image,:id, Image.to_list %>
+      <%= submit_tag 'Assign image' %>
+  <% end %>

@@ -1,0 +1,7 @@
+page.replace_html 'categories_list', 
+                  :partial => 'categories/list', 
+                  :locals => {:categories => @categories, :reorder_url => @reorder_url }
+
+page.sortable('all_categories', :url => @reorder_url, :complete => "update_all();")
+page << "update_all();"
+page["all_categories"].visual_effect :highlight

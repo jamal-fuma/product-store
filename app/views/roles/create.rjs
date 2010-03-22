@@ -1,0 +1,8 @@
+page["new_role"].visual_effect :blind_up
+page.replace_html 'roles_list', 
+                  :partial => 'roles/list', 
+                  :locals => {:roles => @roles, :reorder_url => @reorder_url }
+
+page.sortable('all_roles', :url => @reorder_url, :complete => "update_all();")
+page << "update_all();"
+page["all_roles"].visual_effect :highlight

@@ -1,0 +1,21 @@
+   <!-- list titles -->
+  <%= supplier_heading_helper :checkbox =>true, :id => 'toggle_suppliers' %>
+
+ <%  if(suppliers && !suppliers.empty?) %>
+   <!-- list items -->
+  <%= sortable_list(suppliers,
+        :url => @reorder_url,
+        :group => 'all',
+        :list_type => 'suppliers'){ |supplier|
+          supplier_row_helper(supplier,:checkbox => true, :image =>:thumb)
+        }%>
+
+  <!-- pagination -->
+  <div class="footer">
+    <%= yield :supplier_list_footer %>
+    &nbsp;
+  </div>
+ <% else %> 
+  <div id="all_suppliers"></div>
+ <% end %> 
+

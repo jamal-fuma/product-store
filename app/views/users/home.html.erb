@@ -1,0 +1,9 @@
+<% content_for :masthead do -%>
+<% if logged_in? -%>
+      <h2>you are logged in as <%= current_user.login -%></h2>
+       <p><%= link_to 'logout', logout_path-%></p>
+<% else -%>
+        <h2>you are not logged in!</h2>
+        <p><%= link_to 'signup', signup_path-%> or <%= link_to 'login', login_path-%></p>
+<% end -%>
+<% end -%>

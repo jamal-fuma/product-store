@@ -1,0 +1,7 @@
+<%= page_title_helper "Uploading a new image" %>
+<%= page_description_helper "Provides a form for submission of image details" %>
+<%= page_keywords_helper('product,creation,form') %>
+<% content_for :content_frame do %>
+  <%= link_to 'All images', images_path -%> 
+  <%= render :partial => 'form', :locals => {:image => @image} %>
+<% end %>

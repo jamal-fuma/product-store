@@ -1,0 +1,1 @@
+page["edit_#{dom_id(@supplier)}"].visual_effect :blind_up

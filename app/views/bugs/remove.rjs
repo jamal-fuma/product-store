@@ -1,0 +1,10 @@
+page.replace_html 'bugs_list', 
+                  :partial => 'bugs/list', 
+                  :locals => {:bugs => @bugs, :reorder_url => @reorder_url }
+
+
+page.sortable('all_bugs', :url => @reorder_url, :complete => "update_all();")
+page << "update_all();"
+page.reload if @bugs.empty?
+page["all_bugs"].visual_effect :highlight
+

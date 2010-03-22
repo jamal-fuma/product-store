@@ -1,0 +1,10 @@
+<%= page_title_helper 'Bugs Home' %>
+<%= page_description_helper 'Bugs Home, listing of all bugs' %>
+<%= page_keywords_helper @bugs.map(&:title).join(",")  %>
+
+<% content_for :content_frame do %>
+<%= render  :partial => 'searches/form' %>
+<div id='placeholder'>
+  <%= bugs_list_helper(@bugs) %>
+</div>
+<% end -%>

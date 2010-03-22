@@ -1,0 +1,12 @@
+
+<%= new_supplier_link_helper :update => 'all_suppliers' %>
+
+<% form_tag remove_suppliers_path,:method =>:delete,:id=>'remove-supplier-form',:class=>'button' do %>
+  <%= submit_tag 'Delete suppliers' %>
+  <div id="suppliers_list" class="shared-list">
+        <%= render  :partial => 'suppliers/list', 
+                    :locals => {
+                      :suppliers => suppliers
+                     } -%>
+  </div>
+<% end -%>

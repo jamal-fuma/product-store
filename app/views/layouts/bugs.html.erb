@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" encoding="ISO-8859-1">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+        <meta name="author" content="Jamal Natour" />
+        <meta name="description" content="<%= yield :page_description -%>" />
+        <meta name="keywords" content="<%= yield :page_keywords -%>" />
+        <meta name="Generator" content="gen-html (c)2009 FumaSoftware" />
+        <link rel="icon" type="image/png" href="/images/fuma_logo_col.png" />
+	
+        <title> <%= yield :page_title -%> </title>
+        
+        <%= yield :page_scripts -%>
+   <%= javascript_include_tag :defaults -%>
+   <%= stylesheet_link_tag 'master' -%>
+   <%= stylesheet_link_tag 'shared' -%>
+   <%= stylesheet_link_tag 'bug' -%>
+   <%= stylesheet_link_tag 'comment' -%>
+   <%= javascript_include_tag 'bug' -%>
+</head>
+    
+<body>
+    <div id="wrapper">
+            <div id="header"  class="spacer">
+                    <!-- right pane -->
+                    <div id="category_frame">
+                    <div class="inner_frame">
+                        <img alt="Category_white" src="/images/category_white.png?1252705923" />
+                        <%= yield :category_frame -%>
+                    </div>
+                    </div>
+
+                    <!-- left pane -->
+                    <div id="client_frame">
+                    <div class="inner_frame">
+                        <%= render(:partial => 'users/user_bar') -%>
+                        <%= yield :client_frame -%>
+                    </div>
+                    </div>
+            </div>
+            
+            <div id="masthead"  class="spacer">
+                    <!-- right pane -->
+                    <div id="logo_frame">
+                    <div class="inner_frame">
+                        <a href="/"><img alt="Fuma_logo_col" src="/images/fuma_logo_col.png?1252705923" /></a>
+                    </div>
+                    </div>
+                    <!-- left pane -->
+                    <div id="menubar_frame">
+                    <div class="inner_frame">
+                        <%= yield :menubar_frame -%>
+                    </div>
+                    </div>
+            </div>
+<% content_for :header_content_extra do %>
+<%= page_navigation_helper new_bug_link_helper %>
+   <% end -%>
+            <div id="content"  class="spacer">
+            <p> <%=  flash[:notice] %></p>
+            <% tabnav :main do -%>            
+                <div id="menu_frame">
+                <div class="inner_frame">
+                        <%= yield :sidebar_frame -%>
+                </div>
+                </div>
+                 <div id="content_frame">
+                <div class="inner_frame">
+                        <%= yield :content_frame -%>
+                </div>
+                </div>
+             <% end -%>
+            </div>
+
+
+            <div id="repeatnav" class="spacer">
+                  <%= yield :repeatnav_frame -%>
+            </div>
+
+            <div class="spacer">
+            <div class="">
+                <p>&copy; 2009 FumaSoftware Limited - All Rights Reserved.</p>
+            </div>
+            </div>
+    </div>
+
+    <div id="script_control">
+      <%= yield :inline_script -%>
+    </div>
+
+</body>
+</html> 
+

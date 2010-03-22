@@ -1,0 +1,4 @@
+page.insert_html :top, 'placeholder', 
+                 :partial => 'categories/form',
+                 :locals => {:category => @category},
+                 :layout => false 

@@ -1,0 +1,13 @@
+
+<%= new_category_link_helper :update => 'all_categories' %>
+
+<% form_tag remove_categories_path,:method =>:delete,:id=>'remove-category-form',:class=>'button' do %>
+  <%= submit_tag 'Delete categories' %>
+  <div id="categories_list" class="shared-list">
+        <%= render  :partial => 'categories/list', 
+                    :locals => {
+                      :categories  => categories,
+                      :reorder_url => reorder_url
+                     } -%>
+  </div>
+<% end -%>

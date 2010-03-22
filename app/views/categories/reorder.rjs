@@ -1,0 +1,3 @@
+page << "update_list('all_categories','selected_ids');"
+page["all_categories"].visual_effect :highlight
+

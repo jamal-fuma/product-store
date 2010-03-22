@@ -1,0 +1,10 @@
+<%= page_title_helper 'Images Home' %>
+<%= page_description_helper 'Images Home, listing of all images' %>
+<%= page_keywords_helper @images.map(&:name).join(",") %>
+
+<% content_for :content_frame do %>
+<%= render  :partial => 'searches/form' %>
+<div id='placeholder'>
+  <%= images_list_helper(@images,:thumb) %>
+</div>
+<% end -%>

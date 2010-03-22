@@ -1,0 +1,236 @@
+/* float the search form */
+.shared-list-header .drop_box,
+.shared-list-header .search_box
+{
+} 
+.shared-list-header form .clearfix input[type=text]
+{
+  margin:0;
+  padding:0;
+}
+
+ .shared-list-header form .clearfix label
+{
+  width:16%;
+}
+ .shared-list-header form .clearfix 
+{
+  width:40%;
+}
+
+.search_box
+{
+  width:100%;
+  border-top: solid 0.1em #00A7A5; 
+  border-bottom: solid 0.1em #00A7A5; 
+  margin: 0  0 50px 0;
+}
+
+.shared-list-header .drop_box
+{
+  margin: 0 0px 0 10px; 
+}
+
+#product_category_id
+{
+}
+
+#category_1_handle
+{
+  border: solid 0.3em #00A7A5; 
+  background-color:#f0e;
+  width:30px;
+}
+/* add a border to the search box */
+.shared-list-header .search_box input[type=text]
+{
+}
+.drop_box input,
+.drop_box select
+{
+}
+
+/* a second header row with sorting links */
+.shared-list-titles,
+.shared-list-titles .row,
+.shared-list-titles .row .col
+{
+  background-color: #00A7A5; 
+  color:#fff;
+}
+.shared-list-titles .row
+{
+  width:100%;
+}
+
+li
+{
+  clear:both;
+  margin-top:1px;
+}
+
+#menu_frame .inner_frame a
+{
+  display:block;
+  font-size: 0.7em;
+}
+  
+.row .col-reporter,
+.row .col-title,
+.row .col-name,
+.row .col-description,
+.row .col-quantity,
+.row .col-image,
+.row .col
+{
+  vertical-align:top;
+  font-size:0.7em;
+  margin-right:1px;
+  margin-left:2px;
+  display:inline-block;
+  min-width:10%;
+  max-width:30%;
+  text-align:center;
+}
+
+.header .row,
+.header .row dd
+{
+  font-size:0.9em;
+  background-color: #00A7A5; 
+  color:#eee;
+}
+
+.row .col-name
+{
+  font-size:0.7em;
+  max-width:20%;
+  min-width:20%;
+  text-align:left;
+}
+
+.row .col-description
+{
+  max-width:18%;
+  min-width:18%;
+  text-align:left;
+}
+.row .col-image
+{
+  max-width:10%;
+  min-width:10%;
+  text-align:left;
+}
+.row .col-quantity
+{
+  max-width:8%;
+  min-width:8%;
+  text-align:center;
+}
+
+/* alternate background colours for list rows */
+.shared-list-even-row { 
+  background-color :#F0F7F9;
+}
+.shared-list-odd-row { 
+}
+
+
+
+/* container */
+ul.shared-list
+{
+
+  border:solid 0.1em #00A7A5;
+}
+
+.shared-list .footer .pagination span
+{
+  /* white text on green */
+  background-color: #00A7A5; 
+  color:#eee;
+}
+
+.shared-list .header, .shared-list .header a,
+.shared-list .footer, .shared-list .footer a
+{
+  /* white text on green */
+  background-color: #00A7A5; 
+  color:#eee;
+}
+
+/* headers */
+.shared-list .header .search_box label
+{
+  color:#eee;
+  font-size:1.2em;
+}
+
+/* forms in the header */
+.shared-list .header form
+{
+
+}
+
+/* form text elements in the header */
+.shared-list .header form input[type=text]
+{
+  border: solid 0.2em #00A7A5; 
+}
+
+
+/* content */
+.shared-list .content
+{
+
+}
+
+/* footers */
+.shared-list .footer
+{
+  margin: 0 0 0 0;
+  clear:both;
+}
+
+#user-bar
+{
+  text-align:right;
+}
+#user-bar .col a
+{
+ text-align:right;
+ vertical-align:top;
+}
+#user-bar .col .nickname
+{
+  margin:0;
+  padding:0;
+  vertical-align:top;
+  text-align:left;
+}
+
+#user-bar.row .col
+{
+  text-align:right;
+  max-width:90%;
+  min-width:1%;
+}
+
+.field-label-with-errors
+{
+  display:block;
+  clear:both;
+  border:solid 0.1em #ccc;
+}
+
+.spacer.clearfix
+{
+  width:95%;
+  margin:auto;
+  z-index:-1;
+}
+.spacer.clearfix fieldset
+{
+   margin:40px 0px 0px 0px;
+   width:95%;
+}

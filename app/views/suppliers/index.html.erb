@@ -1,0 +1,10 @@
+<%= page_title_helper 'Suppliers Home' %>
+<%= page_description_helper 'Suppliers Home, listing of all suppliers' %>
+<%= page_keywords_helper @suppliers.map(&:name).join(",") %>
+
+<% content_for :content_frame do %>
+<%= render  :partial => 'searches/form' %>
+<div id='placeholder'>
+  <%= suppliers_list_helper(@suppliers) %>
+</div>
+<% end -%>

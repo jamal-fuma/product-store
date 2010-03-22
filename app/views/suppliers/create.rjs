@@ -1,0 +1,8 @@
+page["new_supplier"].visual_effect :blind_up
+page.replace_html 'suppliers_list', 
+                  :partial => 'suppliers/list', 
+                  :locals => {:suppliers => @suppliers, :reorder_url => @reorder_url }
+
+page.sortable('all_suppliers', :url => @reorder_url, :complete => "update_all();")
+page << "update_all();"
+page["all_suppliers"].visual_effect :highlight

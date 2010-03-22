@@ -1,0 +1,11 @@
+<%= new_role_link_helper :update => 'all_roles' %>
+
+<% form_tag remove_roles_path,:method =>:delete,:id=>'remove-role-form',:class=>'button' do %>
+  <%= submit_tag 'Delete roles' %>
+  <div id="roles_list" class="shared-list">
+        <%= render  :partial => 'roles/list', 
+                    :locals => {
+                      :roles => roles
+                     } -%>
+  </div>
+<% end -%>

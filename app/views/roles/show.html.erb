@@ -1,0 +1,18 @@
+<%= page_title_helper detail_heading(@role.name) %>
+<%= page_description_helper h(@role.description)   %>
+<%= page_keywords_helper h(@role.description)%>
+
+<%= side_menu_helper @role.users, :title => "<h6>Users (#{@role.users.size})</h6>" %>
+
+<% content_for :header_content_extra do %>
+  <%= edit_role_link_helper(@role) %>
+<% end -%>
+
+<% content_for :content_frame do %>
+<%= render:partial => 'searches/form' %>
+<div id="links_bar"></div>
+<div id='placeholder'>
+  <%= roles_list_helper([@role]) %>
+</div>
+<% end -%>
+<%= role_links(@role) %>

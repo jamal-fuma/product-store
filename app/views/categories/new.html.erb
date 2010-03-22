@@ -1,0 +1,4 @@
+<%= page_title_helper "Creating a new category" %>
+<% content_for :content_frame do %>
+  <%= render :partial => 'form', :locals => {:category => @category} %>
+<% end %>

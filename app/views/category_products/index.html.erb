@@ -1,0 +1,49 @@
+<%= page_title_helper %Q{Products for #{ h(@category.name) } } %>
+<%= page_description_helper %Q{ #{h(@category.name)} described as #{h(@category.description)} has a number of products featuring  #{h(@category.name)} } %>
+<%= page_keywords_helper @products.map(&:name).join(",") %>
+
+<%= side_menu_helper @categories, :title => "<h6>Categories (#{@categories.size})</h6>" %>
+<%= side_menu_helper @products, :title => "<h6>Products (#{@products.size})</h6>" %>
+<%= side_menu_helper @images,     :title => "<h6>Images (#{@images.size})</h6>" %>
+
+<% content_for :header_content_extra do %>
+ | <%= link_to_remote 'Edit Category', 
+  { :url =>  edit_category_path(@category) ,
+    :method => :get,
+    :update => 'all_categories', 
+    :position => :top
+  }, 
+  :href => edit_category_path(@category) %>
+<% end %>
+<% content_for :header_content_follow do %>
+ <%= render  :partial => 'category_products/form', 
+              :locals => {:category => @category} -%>
+<% end %>
+
+<% content_for :content_frame do %>
+  <div id="links_bar">
+  <div>
+  
+
+  <%= render:partial => 'searches/form' %>
+  <%= categories_list_helper [@category],reorder_categories_url %> 
+
+  <!-- hackily replace the form url with javascript -->
+  <% form_tag remove_category_products_path(@category), :method => :delete,
+        :id=>'remove-category-product-form', :class=> 'button' do %>
+        <%= submit_tag 'Remove products' %>
+        <div id="products_list" class="shared-list">
+          <%= render  :partial => 'products/list', 
+                      :locals => {:products => @products,
+                                  :reorder_url =>@reorder_url
+                      } -%>
+         </div>
+  <% end %>
+
+<% end -%>
+
+<% content_for :product_list_footer do -%>
+    <%= will_paginate @products %>
+<% end -%>
+<%= category_links(@category) %>
+

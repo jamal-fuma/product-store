@@ -1,0 +1,10 @@
+<%= page_title_helper 'Roles Home' %>
+<%= page_description_helper 'Roles Home, listing of all user roles' %>
+<%= page_keywords_helper @roles.map(&:name).join(",") %>
+
+<% content_for :content_frame do %>
+<%= render  :partial => 'searches/form' %>
+<div id='placeholder'>
+  <%= roles_list_helper(@roles) %>
+</div>
+<% end -%>

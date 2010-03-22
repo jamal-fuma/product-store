@@ -1,0 +1,21 @@
+.row .role.col-name
+{
+  font-size:0.7em;
+  max-width:30%;
+  min-width:30%;
+  text-align:left;
+}
+
+.row .role.col-description
+{
+  max-width:55%;
+  min-width:55%;
+  text-align:left;
+}
+.row .role.col-quantity
+{
+  max-width:10%;
+  min-width:10%;
+  text-align:center;
+}
+

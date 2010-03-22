@@ -1,0 +1,11 @@
+<%= new_product_link_helper :update => 'all_products' %>
+
+<% form_tag remove_products_path,:method =>:delete,:id=>'remove-product-form',:class=>'button' do %>
+  <%= submit_tag 'Delete products' %>
+  <div id="products_list" class="shared-list">
+        <%= render  :partial => 'products/list', 
+                    :locals => {
+                      :products => products
+                     } -%>
+  </div>
+<% end -%>

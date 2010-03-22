@@ -1,0 +1,27 @@
+<%= page_title_helper %Q{Categories for #{ h(@product.name) } } %>
+<%= page_description_helper %Q{ #{h(@product.name)} described as #{h(@product.description)} has a number of categories featuring  #{h(@product.name)} } %>
+<%= page_keywords_helper @categories.map(&:name).join(",") %>
+
+<%= side_menu_helper @images, :method =>:filename,    :title => "<h6>Images (#{@images.size})</h6>" %>
+<%= side_menu_helper @suppliers,  :title => "<h6>Suppliers (#{@suppliers.size})</h6>" %>
+<%= side_menu_helper @categories, :title => "<h6>Categories (#{@categories.size})</h6>" %>
+
+<% content_for :header_content_follow do %>
+ <%= render  :partial => 'product_categories/form', 
+              :locals => {:product => @product} -%>
+<% end %>
+
+<% content_for :content_frame do %>
+  <div id="links_bar"></div>
+  <%= render:partial => 'searches/form' %>
+<%= products_list_helper [@product] %> 
+
+<div id='placeholder'>
+  <% remove_category_helper(
+              @categories,
+              @reorder_url,
+              remove_product_categories_path(@product),
+              :form_id=>'remove-product-category-form',
+              :form_class=>'button') %>
+</div>
+<% end -%>

@@ -1,0 +1,37 @@
+// initializer
+#ActionView::Base.field_error_proc = Proc.new { |html_tag, instance| "<span class=\"fieldWithErrors\">#{html_tag}</span>" }
+ActionView::Base.default_form_builder = FumaFormBuilder
+ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+    error_style = "background-color: #ffff80"
+    if html_tag =~ /<(input|textarea|select)[^>]+style=/
+      style_attribute = html_tag =~ /style=['"]/
+      html_tag.insert(style_attribute + 7, "#{error_style}; ")
+    elsif html_tag =~ /<(input|textarea|select)/
+      first_whitespace = html_tag =~ /\s/
+      html_tag[first_whitespace] = " style=\"#{error_style}\" "
+    end
+    html_tag
+end
+// Controller
+ before_filter :check_for_cancel, :only => [:create,:update]
+
+  def check_for_cancel
+    if params[:commit] == 'Cancel'
+      raise params.inspect
+    end
+  end
+
+// views
+new.html.erb
+<div class="section">
+<%= render :partial => 'form' %>
+</div>
+
+_form.html.erb
+<% form_for(@product) do |f| %>
+  <% field_set_tag 'Product Details' do %>
+    <%= f.text_field :name %>
+    <%= f.text_field :price %>
+    <%= f.submit_and_cancel('Save','Cancel')  %>
+  <% end %>
+<% end %>

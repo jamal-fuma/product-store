@@ -1,0 +1,121 @@
+/* an unordered list used as a generic container for 
+   sortable lists */
+.shared-list
+{
+  font-size:0.7em;
+  list-style:none;
+  margin:0;
+  margin-right:5px;
+  border-right:solid 0.1em #00A7A5;
+  border-left:solid 0.1em #00A7A5;
+}
+
+/* a header row with a search box and some links */
+.shared-list-header
+{
+  background-color:#00A7A5;
+}
+
+/* float the search form */
+.shared-list-header .drop_box,
+.shared-list-header .search_box
+{
+} 
+.shared-list-header form .clearfix input[type=text]
+{
+  margin:0;
+  padding:0;
+}
+
+ .shared-list-header form .clearfix label
+{
+  width:16%;
+}
+ .shared-list-header form .clearfix 
+{
+  width:40%;
+}
+
+.shared-list-header .search_box
+{
+  margin: 5px 0 0 0;
+  width:42%;
+  border-bottom: solid 0.1em #00A7A5; 
+}
+
+.shared-list-header .drop_box
+{
+  margin: 0 0px 0 10px; 
+}
+
+#product_category_id
+{
+}
+
+#category_1_handle
+{
+  border: solid 0.3em #00A7A5; 
+  background-color:#f0e;
+  width:30px;
+}
+/* add a border to the search box */
+.shared-list-header .search_box input[type=text]
+{
+}
+.drop_box input,
+.drop_box select
+{
+}
+
+/* a second header row with sorting links */
+.shared-list-titles,
+.shared-list-titles .row,
+.shared-list-titles .row .col
+{
+  background-color: #00A7A5; 
+  color:#fff;
+  border:solid 0.1em red;
+}
+.shared-list-titles .row
+{
+  width:100%;
+}
+
+li
+{
+  clear:both;
+  margin-top:1px;
+
+}
+.row .col
+{
+  margin-right:5px; 
+  width:19%;
+/*
+  float:left; 
+  */
+}
+
+.shared-list-footer
+{
+  clear:both;
+  background-color:#00A7A5;
+}
+
+.shared-list-even-row,
+.shared-list-odd-row
+{
+  border-bottom:solid 0.1em #ccc;
+  margin-top:1px;
+}
+
+/* alternate background colours for list rows */
+.shared-list-odd-row
+{
+}
+
+/* alternate background colours for list rows */
+.shared-list-even-row { 
+  background-color :#F0F7F9;
+}
+

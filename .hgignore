@@ -1,0 +1,5 @@
+# use glob syntax.
+syntax: glob
+*.log
+*.swp
+*.sqlite3

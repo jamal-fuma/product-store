@@ -1,0 +1,31 @@
+<%= page_title_helper %Q{Categories for #{ h(@category.long_name) } } %>
+<%= page_description_helper %Q{ #{h(@category.name)} described as #{h(@category.description)} listing of categories belonging to #{h(@category.name)} } %>
+<%= page_keywords_helper @categories.map(&:name).join(",") %>
+
+<%= side_menu_helper @category.categories, :title => "<h6>Categories (#{@category.categories.size})</h6>" %>
+<%= side_menu_helper @category.images,     :title => "<h6>Images (#{@category.images.size})</h6>" %>
+<%= side_menu_helper @category.products,  :title => "<h6>Products (#{@category.products.size})</h6>" %>
+
+<% content_for :header_content_extra do %>
+ | <%= link_to_remote 'Edit Category', 
+  { :url =>  edit_category_path(@category) ,
+    :method => :get,
+    :update => 'all_categories', 
+    :position => :top
+  }, 
+  :href => edit_category_path(@category) %>
+<% end -%>
+
+<% content_for :content_frame do %>
+<%= render:partial => 'searches/form' %>
+<div id="links_bar"></div>
+<div id='placeholder'>
+  <%= categories_list_helper [@category],reorder_categories_url %> 
+</div>
+<% end %>
+
+
+<% content_for :category_list_footer do -%>
+   <%= will_paginate @categories %>
+<% end -%>
+<%= category_links(@category) %>

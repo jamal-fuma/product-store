@@ -1,0 +1,10 @@
+page["new_category"].visual_effect :blind_up
+# remove existing scripts 
+#page.replace_html 'script_control', ''
+page.replace_html 'categories_list', :partial => 'list', :locals => {:categories => Category.paginate(:page => params[:page])}
+
+#page["all_categories"].visual_effect :slide_down
+#page.reload
+page << "toggle_checkboxes('toggle_categories','#category_ids_');"
+page << "update_list_handler('all_categories','selected_ids');"
+page.sortable('all_categories', :url => reorder_categories_url, :complete => "update_list('all_categories','selected_ids');")

@@ -1,0 +1,10 @@
+#page["edit_#{dom_id(@bug)}"].visual_effect :blind_up
+
+page.replace_html "#{dom_id(@bug)}",
+                  :partial => 'bugs/bug_line', 
+                  :locals => {:bug => @bug }
+
+page.sortable('all_bugs', :url => @reorder_url, :complete => "update_all();")
+page << "update_all();"
+page["#{dom_id(@bug)}"].visual_effect :highlight
+

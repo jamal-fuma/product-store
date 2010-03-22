@@ -1,0 +1,15 @@
+<% form_remote_for(supplier)  do |f|  %>
+  <% field_set_tag 'Supplier Details' do -%>
+      <%= f.text_field :name -%>
+      <%= f.text_field :description -%>
+      <%= f.text_field :account -%>
+      <%= f.text_field :sort_code -%>
+      <%= f.text_field :bank_name -%>
+      <%= f.text_field :dialing_code -%>
+      <%= f.text_field :telephone -%>
+      <%= f.text_field :email -%>
+      <%= f.submit_and_cancel('Save','Cancel') -%>
+  <% end %>
+<% end %>
+
+<%= javascript_tag "observe_form_actions();" %>

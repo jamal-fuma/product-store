@@ -1,0 +1,10 @@
+<%= page_title_helper 'Products Home' %>
+<%= page_description_helper 'Products Home, listing of all products' %>
+<%= page_keywords_helper @products.map(&:name).join(",")  %>
+
+<% content_for :content_frame do %>
+<%= render  :partial => 'searches/form' %>
+<div id='placeholder'>
+  <%= products_list_helper(@products) %>
+</div>
+<% end -%>

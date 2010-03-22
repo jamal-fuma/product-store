@@ -1,0 +1,5 @@
+# remove existing scripts 
+page.replace_html 'suppliers_list', :partial => 'suppliers/list', :locals => {:suppliers => @suppliers}
+page.sortable('all_suppliers', :url => reorder_product_suppliers_url(@product), :complete => "update_list('all_suppliers','selected_ids');")
+page["all_suppliers"].visual_effect :slide_down
+

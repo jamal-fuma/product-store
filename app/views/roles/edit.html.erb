@@ -1,0 +1,7 @@
+<%= page_title_helper detail_heading(@role.name) %>
+<%= page_description_helper 'Role Entry form, This page allows updating of an existing user role' %>
+<%= page_keywords_helper('role,updating,form') %>
+<% content_for :content_frame do %>
+  <%= link_to 'All roles', roles_path -%> 
+  <%= render :partial => 'form', :locals => {:role => @role} %>
+<% end %>

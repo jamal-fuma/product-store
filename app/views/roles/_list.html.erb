@@ -1,0 +1,21 @@
+   <!-- list titles -->
+  <%= role_heading_helper :checkbox =>true, :id => 'toggle_roles' %>
+
+ <%  if(roles && !roles.empty?) %>
+   <!-- list items -->
+  <%= sortable_list(roles,
+        :url => @reorder_url,
+        :group => 'all',
+        :list_type => 'roles'){ |role|
+          role_row_helper(role,:checkbox => true)
+        }%>
+
+  <!-- pagination -->
+  <div class="footer">
+    <%= yield :role_list_footer %>
+    &nbsp;
+  </div>
+ <% else %> 
+  <div id="all_roles"></div>
+ <% end %> 
+

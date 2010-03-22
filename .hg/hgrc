@@ -1,0 +1,2 @@
+[paths]
+default = ssh://me@192.168.1.22//workspace/store5

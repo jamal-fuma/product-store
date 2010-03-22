@@ -1,0 +1,22 @@
+   <!-- list titles -->
+  <%= category_heading_helper :checkbox =>true, :id => 'toggle_categories' %>
+  
+  <%  if(categories && !categories.empty?) %>
+
+   <!-- list items -->
+  <%= sortable_list(categories,
+        :url => reorder_url,
+        :group => 'all',
+        :list_type => 'categories'){ |category|
+          category_row_helper(category,:image => :thumb,:checkbox => true)
+        }%>
+
+  <!-- pagination -->
+  <div class="footer">
+    &nbsp;
+    <%= yield :category_list_footer %>
+  </div>
+
+ <% else %> 
+  <div id="all_categories"></div>
+<% end %> 

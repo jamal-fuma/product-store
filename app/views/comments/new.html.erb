@@ -1,0 +1,8 @@
+<%= page_title_helper "Creating a new comment for #{@bug.human_title}" %>
+<%= page_description_helper "Provides a form for submission of comment details" %>
+<%= page_keywords_helper('bug,comment,submission,form') %>
+<% content_for :content_frame do %>
+  <%= link_to 'All bugs', bugs_path -%> 
+  <%= render :partial => 'form', :locals => {:comment => @comment, :bug => @bug} %>
+<% end %>
+

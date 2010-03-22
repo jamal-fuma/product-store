@@ -1,0 +1,9 @@
+page.replace_html 'images_list', 
+                  :partial => 'images/list', 
+                  :locals => {:images => @images, :reorder_url => @reorder_url, thumb => :thumb }
+
+
+page.sortable('all_images', :url => @reorder_url, :complete => "update_all();")
+page << "update_all();"
+page.reload if @images.empty?
+page["all_images"].visual_effect :highlight

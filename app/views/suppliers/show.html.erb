@@ -1,0 +1,24 @@
+<%= page_title_helper detail_heading(@supplier.name) %>
+<%= page_description_helper %Q{ #{h(@supplier.name)} described as #{h(@supplier.description)} listing of products featuring  #{h(@supplier.name)} } %>
+<%= page_keywords_helper @products.map(&:name).join(",") %>
+
+<%= side_menu_helper @products,  :title => "<h6>Products (#{@products.size})</h6>" %>
+
+<% content_for :header_content_extra do %>
+ | <%= link_to_remote 'Edit Supplier', 
+  { :url =>  edit_supplier_path(@supplier) ,
+    :method => :get,
+    :update => 'all_suppliers', 
+    :position => :top
+  }, 
+  :href => edit_supplier_path(@supplier) %>
+<% end -%>
+
+<% content_for :content_frame do %>
+<%= render:partial => 'searches/form' %>
+<div id="links_bar"></div>
+<div id='placeholder'>
+  <%= suppliers_list_helper([@supplier]) %>
+</div>
+<% end -%>
+<%= supplier_links(@supplier) %>

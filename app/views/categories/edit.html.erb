@@ -1,0 +1,22 @@
+<%= page_title_helper detail_heading(@category.name) %>
+<%= page_description_helper h(@category.description)   %>
+<%= page_keywords_helper h(@category.description)%>
+<%= page_navigation_helper %>
+
+<% content_for :header_content_extra do %>
+  | <%= link_to 'New Category', new_category_path -%> | <%= link_to 'Back to categories', categories_path -%> 
+<% end -%>
+
+<% content_for :content_frame do -%>
+  
+  <%= categories_breadcrumb(@category) -%>
+  
+  <% remote_form_for :category, :url => remove_categories_path, :html => {:method => :delete, :id=>'delete-form'} do |f| %>
+    <%= hidden_field_tag "selected_ids", @category.id %>
+    <%= submit_tag 'Remove' %>
+ <%end%>
+  
+ <%= render :partial => 'form', :locals => {:category => @category} %>
+
+ <% end -%>
+

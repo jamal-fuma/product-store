@@ -1,0 +1,9 @@
+#page["edit_#{dom_id(@product)}"].visual_effect :blind_up
+
+page.replace_html "#{dom_id(@product)}",
+                  :partial => 'products/product_line', 
+                  :locals => {:product => @product }
+
+page.sortable('all_products', :url => @reorder_url, :complete => "update_all();")
+page << "update_all();"
+page["#{dom_id(@product)}"].visual_effect :highlight

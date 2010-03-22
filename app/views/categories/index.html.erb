@@ -1,0 +1,10 @@
+<%= page_title_helper 'Categories Home' %>
+<%= page_description_helper 'Categories Home, listing of all parent categories' %>
+<%= page_keywords_helper @categories.map(&:name).join(",") %>
+
+<% content_for :content_frame do %>
+<%= render  :partial => 'searches/form' %>
+<div id='placeholder'>
+  <%= categories_list_helper(@categories,@reorder_url) %>
+</div>
+<% end %> 

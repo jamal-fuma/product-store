@@ -1,0 +1,171 @@
+/* Start Forms */
+
+form { width:20em; }
+form fieldset { font-size: 16pt; }
+form fieldset legend, form label, form input, form select, form select option, form textarea, 
+.{
+  font-family:Arial, sans-serif;
+  font-size: 12pt;
+  font-color: #000; 
+}
+
+
+form input, form select, form textarea 
+{
+  border-top: 2px solid #999999;
+  border-left: 2px solid #999999;
+  border-right: 2px solid #cccccc;
+  border-bottom: 2px solid #cccccc;
+}
+
+form select 
+{
+  height: 1.5em; 
+}
+
+form input[type=submit], form input[type=button] 
+{
+  margin: 0 2px;
+  font-size:0.9em;
+  text-align:right;
+  color: #fff;
+  border-top: 2px solid #55c649;
+  border-left: 2px solid #55c649;
+  border-right: 2px solid #006000;
+  border-bottom: 2px solid #006000;
+  background: #056600;
+}
+
+form input[type=submit][value=cancel]
+{
+  border-top: 2px solid #e68582;
+  border-left: 2px solid #e68582;
+  border-bottom: 2px solid #801f1c;
+  border-right: 2px solid #801f1c;
+  color: #ffb8b5;
+  font-size:0.9em;
+  margin-right:5em;
+  text-align:right;
+  background: #FFFFFF;
+}
+
+form span.fieldWithErrors 
+{
+  display: inline; 
+}
+form span.fieldWithErrors input, form p.fieldWithErrors select, form p.fieldWithErrors textarea {
+    border-top: 2px solid #8F0600;
+    border-left: 2px solid #8F0600;
+    border-bottom: 2px solid #BB4036;
+    border-right: 2px solid #BB4036;
+    line-height: 1.5em;
+}
+
+span.help 
+{
+
+      display: block;
+      font-size: 60%;
+      font-weight: normal;
+      margin-top: 5px;
+      line-height: 100%; 
+}
+
+form p.required 
+{
+
+  float: left;
+  line-height: 1.4em; 
+}
+
+  form p.required label, form p.required p, form p.required span 
+{
+
+    color: #944;
+    font-weight: bold; 
+}
+
+form p.required label span.help 
+{
+
+    margin-top: 0; 
+}
+
+
+/* End Forms */
+
+/**********
+ * Fieldset styles
+ */
+
+legend {
+  font-size:16px;
+  width:75%;
+}
+
+fieldset {
+  border:solid gray 1px;
+  padding: 15px 0 0 5px;
+  margin: 5px 0 0 5px;
+}
+
+.fieldWithErrors input,
+.fieldWithErrors textarea
+{
+  border:solid red 1px;
+  float:left;
+  background-color:#eee;
+  width:10em;
+  font-size:14px;
+ }
+
+fieldset .clearfix .fieldWithErrors input,
+fieldset .clearfix .fieldWithErrors textarea,
+fieldset .clearfix input,
+fieldset .clearfix textarea,
+fieldset .clearfix select {
+  float:left;
+  background-color:#eee;
+  width:15em;
+  font-size:14px;
+  
+}
+
+.field-label-with-error
+{
+  font-size:0.7em;
+  color:#ee0011;
+  display:inline:block;
+}
+
+fieldset .clearfix .fieldWithErrors label,
+fieldset .clearfix label {
+  float:left;
+  text-align:left;
+  line-height:1.3em;
+  font-weight:bold;
+  font-size:14px;
+  text-transform:capitalize;
+
+  margin-left:0.2em;
+  margin-right:0.2em;
+  width:5em;
+}
+
+/* hacks */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix { display: inline-block; }
+html[xmlns] .clearfix { display: block; }
+
+.buttons { text-align:right; margin-right:0.8em;  }
+
+/* Nasty IE6 workaround */
+* html .clearfix { height: 1%; }

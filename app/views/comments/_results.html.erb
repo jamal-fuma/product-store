@@ -1,0 +1,13 @@
+<%= new_comment_link_helper(bug, :update => 'all_comments') %>
+
+<% form_tag remove_bug_comments_path(bug),:method =>:delete,:id=>'remove-bug-comment-form',:class=>'button' do %>
+  <%= submit_tag 'Delete comments' %>
+  <div id="comments_list" class="shared-list">
+        <%= render  :partial => 'comments/list', 
+                    :locals => {
+                      :comments => comments,
+                      :bug => bug
+                     } -%>
+  </div>
+<% end -%>
+

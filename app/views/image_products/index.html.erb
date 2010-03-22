@@ -1,0 +1,47 @@
+<%= page_title_helper %Q{Products using #{ h(@image.filename) } } %>
+<%= page_description_helper %Q{ #{h(@image.filename)} described as #{h(@image.description)} listing of products featuring  #{h(@image.name)} } %>
+<%= page_keywords_helper @products.map(&:name).join(",") %>
+
+<%= side_menu_helper @categories, :title => "<h6>Categories (#{@categories.size})</h6>" %>
+<%= side_menu_helper @products, :title => "<h6>Products (#{@products.size})</h6>" %>
+
+<% content_for :header_content_extra do %>
+ | <%= link_to_remote 'Edit Image', 
+  { :url =>  edit_image_path(@image) ,
+    :method => :get,
+    :update => 'all_images', 
+    :position => :top
+  }, 
+  :href => edit_image_path(@image) %>
+<% end %>
+<% content_for :header_content_follow do %>
+ <%= render  :partial => 'image_products/form', 
+              :locals => {:image => @image} -%>
+<% end %>
+
+<% content_for :content_frame do %>
+  <div id="links_bar">
+  <div>
+  
+
+  <%= render:partial => 'searches/form' %>
+  <%= images_list_helper [@image],reorder_images_url %> 
+
+  <!-- hackily replace the form url with javascript -->
+  <% form_tag remove_image_products_path(@image), :method => :delete,
+        :id=>'remove-image-product-form', :class=> 'button' do %>
+        <%= submit_tag 'Remove products' %>
+        <div id="products_list" class="shared-list">
+          <%= render  :partial => 'products/list', 
+                      :locals => {:products => @products,
+                                  :reorder_url =>@reorder_url
+                      } -%>
+         </div>
+  <% end %>
+
+<% end -%>
+
+<% content_for :product_list_footer do -%>
+   <%= will_paginate @products %>
+<% end -%>
+<%= image_links(@image) %>

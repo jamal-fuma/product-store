@@ -1,0 +1,5 @@
+<dl class="row" id="<%= dom_id(comment)-%>" class="shared-list-even-row" title="<%= h comment.bug.human_title -%>'">
+  <dd class=""> <%= link_to h(comment.user.login), comment.user -%> replied with </dd>
+  <dd class="spacer"><%= h comment.detail -%></dd>
+</dl>
+<%= comment_links(comment.bug,comment)

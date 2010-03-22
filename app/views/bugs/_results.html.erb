@@ -1,0 +1,11 @@
+<%= new_bug_link_helper :update => 'all_bugs' %>
+
+<% form_tag remove_bugs_path,:method =>:delete,:id=>'remove-bug-form',:class=>'button' do %>
+  <%= submit_tag 'Delete bugs' %>
+  <div id="bugs_list" class="shared-list">
+        <%= render  :partial => 'bugs/list', 
+                    :locals => {
+                      :bugs => bugs
+                     } -%>
+  </div>
+<% end -%>

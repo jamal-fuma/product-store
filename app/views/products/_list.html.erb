@@ -1,0 +1,21 @@
+   <!-- list titles -->
+  <%= product_heading_helper :checkbox =>true, :id => 'toggle_products' %>
+
+ <%  if(products && !products.empty?) %>
+   <!-- list items -->
+  <%= sortable_list(products,
+        :url => @reorder_url,
+        :group => 'all',
+        :list_type => 'products'){ |product|
+          product_row_helper(product,:checkbox => true, :image =>:thumb)
+        }%>
+
+  <!-- pagination -->
+  <div class="footer">
+    <%= yield :product_list_footer %>
+    &nbsp;
+  </div>
+ <% else %> 
+  <div id="all_products"></div>
+ <% end %> 
+

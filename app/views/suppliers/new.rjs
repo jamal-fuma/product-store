@@ -1,0 +1,4 @@
+page.insert_html :top, 'placeholder', 
+                 :partial => 'suppliers/form',
+                 :locals => {:supplier => @supplier},
+                 :layout => false 

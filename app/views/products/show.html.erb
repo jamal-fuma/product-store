@@ -1,0 +1,20 @@
+<%= page_title_helper detail_heading(@product.name) %>
+<%= page_description_helper h(@product.description)   %>
+<%= page_keywords_helper h(@product.description)%>
+
+<%= side_menu_helper @categories, :title => "<h6>Categories (#{@categories.size})</h6>" %>
+<%= side_menu_helper @images,     :title => "<h6>Images (#{@images.size})</h6>" %>
+<%= side_menu_helper @suppliers,  :title => "<h6>Suppliers (#{@suppliers.size})</h6>" %>
+
+<% content_for :header_content_extra do %>
+<%= edit_product_link_helper(@product) %> 
+<% end -%>
+
+<% content_for :content_frame do %>
+<%= render:partial => 'searches/form' %>
+<div id="links_bar"></div>
+<div id='placeholder'>
+  <%= products_list_helper([@product]) %>
+</div>
+<% end -%>
+<%= product_links(@product) %>

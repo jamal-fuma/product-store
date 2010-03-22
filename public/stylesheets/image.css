@@ -1,0 +1,29 @@
+
+.row .image.col-name
+{
+  max-width:13%;
+  min-width:13%;
+  text-align:left;
+}
+
+.row .image.col-description
+{
+  text-align:left;
+  max-width:15%;
+  min-width:15%;
+}
+
+.row .image.col-image
+{
+  max-width:15%;
+  min-width:15%;
+  text-align:left;
+}
+.row .image.col-quantity
+{
+  max-width:12%;
+  min-width:12%;
+  text-align:center;
+}
+
+

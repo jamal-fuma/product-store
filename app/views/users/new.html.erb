@@ -1,0 +1,12 @@
+<% @user.password = @user.password_confirmation = nil -%>
+
+<% form_for(@user) do |f| -%>
+   <% field_set_tag 'User Details' do -%>
+      <%= f.error_messages -%>
+        <%= f.text_field :login -%>
+        <%= f.text_field :email, :label =>'Email' -%>
+        <%= f.password_field :password -%>
+        <%= f.password_field :password_confirmation, :label => 'Confirm Password'-%>
+        <%= f.submit 'Sign up' -%>
+   <% end -%>
+<% end -%>

@@ -1,0 +1,5 @@
+
+page.insert_html :top, 'placeholder', 
+                 :partial => 'bugs/form',
+                 :locals => {:bug => @bug},
+                 :layout => false 

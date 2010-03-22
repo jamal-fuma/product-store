@@ -1,0 +1,14 @@
+<div class="shared-list">
+  <div class="header">
+<% form_tag '/search',
+    :method => :get,
+    :class => 'search_box',
+    :onsubmit => 'alert("You haven\'t implemented this, have you!")' do -%>
+    <%= label_tag :q, 'search' -%>
+    <%= text_field_tag :q -%>
+    <%= yield :header_content_extra %>
+<% end -%>
+  </div>
+    <%= yield :header_content_follow %>
+</div>
+

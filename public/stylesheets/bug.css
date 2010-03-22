@@ -1,0 +1,35 @@
+.row .bug.col-title,
+.row .comment.col-name
+{
+  font-size:0.7em;
+  max-width:20%;
+  min-width:20%;
+  text-align:left;
+}
+
+.row .bug.col-reporter,
+.row .comment.col-reporter
+{
+  font-size:0.7em;
+  max-width:30%;
+  min-width:30%;
+  text-align:left;
+}
+
+.row .bug_spacer,
+.row .comment_spacer
+{
+  font-size:0.7em;
+  text-align:left;
+  border-bottom:solid #ccc 0.1em;
+}
+
+.row .bug.col-quantity,
+.row .comment.col-quantity
+{
+  max-width:10%;
+  min-width:10%;
+  text-align:center;
+}
+
+

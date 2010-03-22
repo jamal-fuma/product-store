@@ -1,0 +1,7 @@
+<%= page_title_helper "Creating a new product" %>
+<%= page_description_helper "Provides a form for submission of product details" %>
+<%= page_keywords_helper('product,creation,form') %>
+<% content_for :content_frame do %>
+  <%= link_to 'All products', products_path -%> 
+  <%= render :partial => 'form', :locals => {:product => @product} %>
+<% end %>

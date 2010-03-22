@@ -1,0 +1,7 @@
+<%= page_title_helper 'Creating a new role' %>
+<%= page_description_helper 'Role Entry form, This page allows creation of  a new user role' %>
+<%= page_keywords_helper('role,creation,form') %>
+<% content_for :content_frame do %>
+  <%= link_to 'All roles', roles_path -%> 
+  <%= render :partial => 'form', :locals => {:role => @role} %>
+<% end %>

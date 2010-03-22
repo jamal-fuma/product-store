@@ -1,0 +1,7 @@
+<%= page_title_helper detail_heading(@image.name) %>
+<%= page_description_helper "Provides a form for updating image details" %>
+<%= page_keywords_helper h(@image.description)%>
+<% content_for :content_frame do %>
+  <%= link_to 'All images', images_path -%> 
+  <%= render :partial => 'form', :locals => {:image => @image} %>
+<% end %>

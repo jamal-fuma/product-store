@@ -1,0 +1,47 @@
+
+module NavigationHelpers
+  # Maps a name to a path. Used by the
+  #
+  #   When /^I go to (.+)$/ do |page_name|
+  #
+  # step definition in webrat_steps.rb
+  #
+  def path_to(page_name)
+    case page_name
+    when /the bugs entry page/    :       '/bugs/new'
+    when /the bug detail page for "([^"]*)"$/    :       bug_path(Bug.find_by_title($1))
+    when /the bugs listing page/  :       '/bugs'
+      
+    when /the roles entry page/   :       '/roles/new'
+    when /the roles listing page/ :       '/roles'
+
+    when /the suppliers entry page/   :       '/suppliers/new'
+    when /the suppliers listing page/ :       '/suppliers'
+
+    when /the categories entry page/   :       '/categories/new'
+    when /the categories listing page/ :       '/categories'
+
+    when /the products entry page/   :       '/products/new'
+    when /the products listing page/ :       '/products'
+
+    when /the images entry page/   :       '/images/new'
+    when /the images listing page/ :       '/images'
+
+
+     when /the homepage/
+      '/'
+    
+    # Add more mappings here.
+    # Here is a more fancy example:
+    #
+    #   when /^(.*)'s profile page$/i
+    #     user_profile_path(User.find_by_login($1))
+
+    else
+      raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
+        "Now, go and add a mapping in #{__FILE__}"
+    end
+  end
+end
+
+World(NavigationHelpers)
