@@ -55,10 +55,10 @@ class ActiveSupport::TestCase
 
   def mk_images
     @first_image  = Image.new(:name => "Test product 1")
-    @first_image.uploaded_data = "http://www.seedsofitaly.com/objects/product_images/c4e87a3a.jpg"
+    @first_image.uploaded_data = "http://www.google.com/intl/en_uk/images/logo.gif"
     @first_image.save!
     @second_image = Image.new(:name => "Test product 2") 
-    @second_image.uploaded_data = "http://www.seedsofitaly.com/objects/product_images/c4e87a3a.jpg" 
+    @second_image.uploaded_data = "http://www.google.com/intl/en_uk/images/logo.gif"
     @second_image.save!
     @image_ids    = Image.parents.map(&:id)
     assert_equal(4,Image.all.size)
