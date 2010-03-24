@@ -108,7 +108,7 @@ And I should see "Images found (1)"
 And I should see "New Image"
 And I should see "pic.jpg"
 
-Scenario: 6.0.10 I want to see update an existing image
+Scenario: 6.0.10 I want to update an existing image
 Given a logged in user with a login of "john" and a password of "secret"
 When I view the images list
 And I follow "New Image"
