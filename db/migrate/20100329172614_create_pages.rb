@@ -7,6 +7,7 @@ class CreatePages < ActiveRecord::Migration
       t.string  :description, :limit => 512,  :null => false, :default => 'this description needs to be replaced'
       t.timestamps
     end
+
     add_index "pages", ["parent_id", "name"],
       :name => "index_pages_on_parent_id_and_name",
       :unique => true
@@ -21,4 +22,5 @@ class CreatePages < ActiveRecord::Migration
       drop_table :pages
     end
   end     
+end
 
