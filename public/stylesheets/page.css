@@ -1,0 +1,17 @@
+.row .page.col-description
+{
+  min-width:30%;
+  max-width:30%;
+}
+.row .page.col-quantity
+{
+  max-width:10%;
+  min-width:10%;
+  text-align:center;
+}
+
+#page_description
+{
+  font-size:0.8em;
+  height:275px;
+}

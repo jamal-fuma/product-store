@@ -1,0 +1,4 @@
+<%= page_title_helper "Creating a new page" %>
+<% content_for :content_frame do %>
+  <%= render :partial => 'form', :locals => {:page => @page} %>
+<% end %>

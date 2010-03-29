@@ -1,0 +1,10 @@
+<% form_remote_for(page)  do |f|  %>
+  <% field_set_tag 'Page Details' do -%>
+      <%= f.text_field :name -%>
+      <%= f.select :parent_id, Page.to_list(),:label => 'Parent' %>
+      <%= f.text_area :description %>
+      <%= f.submit_and_cancel('Save','Cancel') -%>
+  <% end -%>
+<% end -%>
+
+<%= javascript_tag "observe_form_actions();" %>

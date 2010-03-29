@@ -44,6 +44,15 @@ class ActiveSupport::TestCase
       [@first_product,@second_product]
    end
 
+   def mk_pages
+      # create some test pages
+      @first_page = Page.create! :name => "Acme", :parent_id => nil
+      @second_page = Page.create! :name => "Widgets", :parent_id => nil
+      @page_ids    = Page.all.map(&:id)
+      assert_equal(2,Page.all.size)
+    [@first_page,@second_page]
+  end
+
    def mk_categories
       # create some test categories
       @first_category = Category.create! :name => "Acme", :parent_id => nil
