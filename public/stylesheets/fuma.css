@@ -1,0 +1,434 @@
+/* Fonts and Defaults */
+ 
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+
+.div { display: block; }
+
+h1 {
+	font-size: 18px;
+	color: #006699;
+	margin-bottom: 10px;
+	}
+
+h2 {
+	font-size: 16px;
+	margin-bottom: 10px;
+	}
+
+h3 {
+	font-size: 1.2em;
+	line-height: 1.25em;
+	font-weight: normal;
+	}
+h4 {
+	font-size: 1.2em;
+	line-height: 1.25em;
+	color: #222222;
+	padding-bottom: 5px;
+	font-weight: normal;
+	}
+
+h5 {
+	font-size: 1.2em;
+	line-height: 1.25em;
+	color: #222222;
+	padding-bottom: 5px;
+	font-weight: bold;
+	}
+
+body { color: #454647; }
+a { color: #61d1e4; }
+
+ul {
+	display: block;
+	unicode-bidi: embed;
+	padding-left-ltr-source: logical;
+	padding-right: -rtl-source: logical;
+	padding-start-value: 40px;
+	}
+
+ul li { list-style-type: none; }
+
+.floatLeft {
+	float: left;
+	text-align: left;
+	}
+
+.cleaner { clear: both; }
+.div { display: block; }
+
+.italic {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman" , Times, serif;
+	color: #1f1c1c;
+	font-size: inherit;
+	padding-bottom: .5em;
+	}
+
+#wk_description, #about_fuma, #expertise, #experience, #services, #client_list {
+	padding-left: 20px;
+	float: left;
+	}
+	
+.right_single3rd {
+	padding-top: 40px;
+	width: 269px;
+	margin-left: -45px;
+	display: block;
+}
+
+#services ul {
+	font-size: 1.2em;
+	padding-top: 35px;
+	padding-bottom: 30px;
+	}
+
+#services ul li {
+	border-bottom-color: #e0e1e2;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	height: 18px;
+	margin-bottom: 0.4em;
+	}
+
+#expertise, #experience { display: block; }
+
+#expertise ul, #experience ul {
+	padding-top: 35px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding-bottom: 25px;
+	}
+
+#expertise ul li,
+#experience ul li {
+	width: 202px;
+	float: left;
+	}
+
+#list_box {
+	padding-top: 25px;
+	padding-bottom: 40px;
+	}
+
+#client_list ul {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	}
+
+#client_list ul li { float: left; }
+
+#client_list #list_box ul li a,
+.client_name {
+	border-bottom-color: #E0E1E2;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	display: block;
+	padding-bottom: 5px;
+	padding-top: 9px;
+	width: 212px;
+	}
+
+#client_list #list_box ul li a:hover {
+	background-color: transparent;
+	background-image: url('../images/dia_blue.png');
+	background-position: 0 0;
+	background-repeat: repeat;
+	}
+
+#client_list #list_box ul li .dimmed { color: #E5E7E7; }
+
+#display_text {
+	background-color: #F6F7F2;
+	padding-bottom: 35px;
+	height: 250px;
+	}
+	
+#display_text img {
+	}
+
+#services h4 { padding-bottom: 5px; }
+
+#recent_projects {
+	overflow:hidden;
+	width:100%;
+}
+
+#recent_projects .folio_listing {
+}
+
+#recent_projects .folio_listing ul {
+	overflow:hidden;
+	width:100%;
+}
+
+#recent_projects .folio_listing ul li {
+	float:left;
+}
+
+#recent_projects .folio_listing ul li a {
+	display:block;
+	padding-bottom:2em;
+	padding-top:2.5em;
+	width:28.9em;
+}
+
+#recent_projects .folio_listing ul li a:hover {
+	background:url("../images/dia_blue.png") repeat scroll 0 0 transparent;
+}
+
+#recent_projects .folio_listing ul li a img {
+	display:block;
+	height:11 em;
+	width:28.9em;
+}
+#recent_projects .folio_listing ul li a h4 {
+	display:block;
+	margin-top:0.9em;
+}
+.disciplines {
+display:block;
+overflow:hidden;
+padding-top:0.5em;
+width:100%;
+}
+.disciplines span {
+color:#454647;
+float:left;
+}
+.thin_bar_1col, thin_bar_2col, thin_bar_4col, .thin_bar_3rdcol {
+	background-color: #e0e1e2;
+	display: block;
+	height: 0.1em;
+	float: left;
+	}
+
+.thin_bar_1col { width: 212px; }
+
+.thin_bar_3rdcol { width:289px; }
+
+.thick_bar_4col, .thick_bar_2col, .thick_bar_1col, .thick_bar_3rdcol {
+	background-color: #999999;
+	background: url(../images/grey_dia.png) repeat-x;
+	display: block;
+	height: 4px;
+	}
+
+.thick_bar_4col { width: 908px; }
+.thick_bar_2col { width: 444px; }
+.thick_bar_1col { width: 212px; }
+
+.thick_bar_3rdcol { width: 289px; }
+
+.1col {
+width:180px;
+}
+
+.gutter_20 { margin-right: 20px; }
+.gutter_30 { margin-right: 30px; }
+.gutter_40 { margin-right: 40px; }
+.pad_top_20 { padding-top: 20px; }
+.pad_bot_20 { padding-bottom: 20px; }
+.pad_left_20 { padding-left: 20px; }
+.pad_left_131 { padding-left: 131px; }
+
+.highlight {
+	font-size: 15px;
+	line-height: 17px;
+	font-weight: bold;
+	color: #aaaaaa;
+	background-color: #006699;
+	display: table-cell;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	}
+
+body {
+	background: #ffffff /* :#d6d6d6 nice grey background from the empty space */;
+	background-image: url('../big_portfolio_pics/Background1.gif');
+	text-align: left;
+	font-size: 62.5%;
+	}
+
+p, span, .caps {
+	margin-bottom: 10px;
+	line-height: 1.25em;
+	font-size: 1.2em;
+	}
+	
+p strong {
+color: black;
+}
+
+.big_paragraph p {
+	font: 2em/25px Georgia, "Times New Roman" , Times, serif;
+	color: #1f1c1c;
+	padding-bottom: .5em;
+	}
+
+
+
+/* Anchors */
+a, a:visited {
+	color: #4ea8b7;
+	text-decoration: none;
+	}
+
+a:hover { }
+
+#navigation a {
+	font-size: 1.2em;
+	line-height: 1.25em;
+	font-style: normal;
+	font-weight: normal;
+	border-bottom-color: #D0D1D3;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	display: block;
+	height: 15px;
+	padding-top: 5px;
+	width: 96px;
+	float: left;
+	}
+
+#primary a { margin-right: 20px; }
+#tools_frame a { margin-left: 11px; }
+
+#navigation {
+	padding-left: 20px;
+	width: 928px;
+	}
+
+#navigation a:hover {
+	background-color: #E5E7AF;
+	background: url(../images/dia_blue.png) repeat;
+	display: block;
+	}	
+
+
+
+
+
+/* Structural declarations
+ *
+ * #wrapper
+ *		 #header with category_frame and client_frame - replaced by logo_frame and tools_frame
+ *		 #masthead with logo_frame and menubar_frame - replaced by navigation
+ *		 #content with menu_frame and content_frame - replaced by content, wk_description, client_list
+ *		 #repeatnav
+ *		 #copyright
+ */
+
+#wrapper {
+	width: 948px;
+	margin-left: 20px;
+	border: 0;
+	padding-bottom: 10px;
+	background: #ffffff;
+	/*background-image:url('../images/red_box.gif')
+
+ */
+	}
+
+#header {
+	border-top: 0;
+	width: 100%;
+	}
+
+div.spacer { padding-top: 20px; }
+
+/** Frames, 
+ *
+ *
+ *	category_frame | client_frame
+ *	logo_frame		 | menubar_frame
+ *	menu_frame		 | content_frame
+ *
+ */
+ 
+#header { }
+
+#content_frame {
+	/* filthy min-height work around for IE6 */
+	height: auto !important;
+	float: left;
+	}
+
+#repeatnav, #copyright { padding-left: 20px; }
+
+#repeatnav.spacer {
+	clear: both;
+	height: 30px;
+	}
+
+#copyright.spacer { height: 60px; }
+
+#content {
+	float: left;
+	overflow: visible;
+	}
+
+img { display: block; }
+
+#tools_frame {
+	float: right;
+	padding-right: 20px;
+	}
+
+#navigation { float: left; }
+
+#logo_frame {
+	width: 464px;
+	float: left;
+	}
+
+p.clearfix {
+	border: none;
+	padding: 2px;
+	margin: 0 0 0 0;
+	}
+
+.folio dt {
+	background-color: #0f0f0f;
+	padding-bottom: 15px;
+	padding-top: 12px;
+	padding-left: 20px;
+	margin-bottom: 20px;
+	}
+
+.folio { }
+
+.wk_text {
+	padding-bottom: 5px;
+	padding-top: 2px;
+	color: #999999;
+	}
+
+#about_fuma { float: left; }
+
+.column_1 {
+	float: left;
+	width: 212px;
+	margin-bottom: 30px;
+	}
+
+.column_2 {
+	width: 42.4em;
+	padding-top: 35px;
+	padding-bottom: 15px;
+	float: left;
+	}
+	
+.column_3rd {
+	width: 32.3em;
+	padding-top: 35px;
+	padding-bottom: 15px;
+	float: left;
+
+}
