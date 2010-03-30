@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100330163126) do
+ActiveRecord::Schema.define(:version => 20100330163755) do
 
   create_table "bugs", :force => true do |t|
     t.integer  "user_id",                                    :null => false
@@ -86,6 +86,14 @@ ActiveRecord::Schema.define(:version => 20100330163126) do
   create_table "page_images", :force => true do |t|
     t.integer  "image_id"
     t.integer  "page_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "page_products", :force => true do |t|
+    t.integer  "page_id",    :null => false
+    t.integer  "product_id", :null => false
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
