@@ -1,9 +1,10 @@
+*.log
 *.o
 *.lo
 *.swp
 *.m4
 .deps/
-logs/
+log/*.log
 tmp/
 .libs/
 m4/
