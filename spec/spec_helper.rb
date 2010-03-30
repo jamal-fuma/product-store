@@ -148,3 +148,11 @@ def before_category_view_helper(category,categories,images,products,times=:once)
   has_named_scope(category,:images,images,times)
 end
 
+
+def before_page_view_helper(page,pages,images,products,times=:once)
+  has_accessor(Page,:find,page,times)
+  has_named_scope(page,:products,products,times)
+  has_named_scope(page,:pages,pages,times)
+  has_named_scope(page,:images,images,times)
+end
+
