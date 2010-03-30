@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title><%= @page_title || "FumaSoftware" %></title>
+<meta name="author" content="Jamal Natour">
+<meta name="description" content="">
+<meta name="keywords" content="software, web design, consultancy">
+<meta name="Generator" content="gen-html (c)FumaSoftware">
+<link rel="icon" type="image/png" href="images/fuma_logo_col.png">
+<%= stylesheet_link_tag 'master' %>
+<%= stylesheet_link_tag 'fuma' %>
+<%= javascript_include_tag "prototype" %>
+</head>
+<% @helper = new_helper(self) %>
+
+<body>
+  <body>
+     <div id="wrapper">
+        <div id="header">
+            <%= framed_content_tag(:id => 'logo_frame'){  @helper.company_logo_link } %>
+        </div>
+    
+        <div id="navigation">
+        <%= framed_content_tag(:id => 'primary'){  @helper.menubar } %>
+        <%= framed_content_tag(:id => 'tools_frame'){  
+            '<a href="/">Client Login</a>'
+            } %>
+        </div>
+	<div id="page_title">
+	<%= framed_content_tag(:id => 'title'){ @helper.page_title_helper } %>	
+	</div>
+
+	<div id="content">
+<!-- content pane -->
+
+<%= framed_content_tag(:id => 'content_frame') { yield } %>
+
+<!-- repeat of L1 navigation -->
+
+<%= @helper.menubar %>
+
+<%= copyright_tag { "FumaSoftware Limited - All Rights Reserved." } %>
+</div>
+</body>
+</html>
