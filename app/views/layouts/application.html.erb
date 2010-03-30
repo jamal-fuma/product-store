@@ -14,43 +14,30 @@
         <%= javascript_include_tag 'resize' %>
         <%= stylesheet_link_tag 'semantic_forms' %>
         <%= stylesheet_link_tag 'master' %>
+        <%= stylesheet_link_tag 'fuma' %>
 </head>
-    <% @helper = new_helper(self) %>
+<% @helper = new_helper(self) %>
 <body>
     <div id="wrapper">
-            
-            <div id="header"  class="spacer">
-                    <!-- right pane -->
-                    <%= framed_content_tag(:id => 'category_frame'){  image_tag("category_white.png") } %>
-                    <!-- left pane -->
-                    <%= framed_content_tag(:id => 'client_frame'){ flash[:notice] || " "} %>
-            </div>
-            
-            <div id="masthead"  class="spacer">
-                    <!-- right pane -->
-                    <%= framed_content_tag(:id => 'logo_frame'){   @helper.company_logo_link } %>
-                    <!-- left pane -->
-       <%= framed_content_tag(:id => 'menubar_frame'){  "" } %>
-            </div>
-          
-            <div id="user_bar"  class="spacer">
-                    <%= render(:partial => 'users/user_bar') %>
-            </div>
-
-                     <div id="content"  class="spacer">
+        <div id="header">
+            <%= framed_content_tag(:id => 'logo_frame'){  @helper.company_logo_link } %>
+        </div>
+        <div id="navigation">
+        <%= framed_content_tag(:id => 'primary'){  @helper.menubar } %>
+        <%= framed_content_tag(:id => 'tools_frame'){ render(:partial => 'users/user_bar') } %>
+        </div>
+<div id="page_title">
+	<%= framed_content_tag(:id => 'title'){ @helper.page_title_helper } %>	
+	</div>
+        <div id="content">
+            <p><%= flash[:notice] || " "} %></p>
             <% tabnav :main do %>
             <%= framed_content_tag(:id => 'menu_frame',:content_title => 'navigation'){  menu_list_tag } %>
               <%= yield %>
             <% end %>
 
+         </div>
+                <%= copyright_tag { "FumaSoftware Limited - All Rights Reserved." } %>
             </div>
-
-            <div id="repeatnav" class="spacer">
-     <%= @helper.menubar %>
-            </div>
-
-            <%= copyright_tag { "FumaSoftware Limited - All Rights Reserved." } %>
-    </div>
-        
 </body>
 </html> 
