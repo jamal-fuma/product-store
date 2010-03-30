@@ -1,0 +1,22 @@
+   <!-- list titles -->
+  <%= page_heading_helper :checkbox =>true, :id => 'toggle_pages' %>
+  
+  <%  if(pages && !pages.empty?) %>
+
+   <!-- list items -->
+  <%= sortable_list(pages,
+        :url => reorder_url,
+        :group => 'all',
+        :list_type => 'pages'){ |page|
+          page_row_helper(page,:image => :thumb,:checkbox => true)
+        }%>
+
+  <!-- pagination -->
+  <div class="footer">
+    &nbsp;
+    <%= yield :page_list_footer %>
+  </div>
+
+ <% else %> 
+  <div id="all_pages"></div>
+<% end %> 

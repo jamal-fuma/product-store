@@ -1,0 +1,13 @@
+
+<%= new_page_link_helper :update => 'all_pages' %>
+
+<% form_tag remove_pages_path,:method =>:delete,:id=>'remove-page-form',:class=>'button' do %>
+  <%= submit_tag 'Delete pages' %>
+  <div id="pages_list" class="shared-list">
+        <%= render  :partial => 'pages/list', 
+                    :locals => {
+                      :pages  => pages,
+                      :reorder_url => reorder_url
+                     } -%>
+  </div>
+<% end -%>

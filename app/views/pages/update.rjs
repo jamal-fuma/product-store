@@ -1,0 +1,10 @@
+page["new_page"].visual_effect :blind_up
+# remove existing scripts 
+#page.replace_html 'script_control', ''
+page.replace_html 'pages_list', :partial => 'list', :locals => {:pages => Page.paginate(:page => params[:page])}
+
+#page["all_pages"].visual_effect :slide_down
+#page.reload
+page << "toggle_checkboxes('toggle_pages','#page_ids_');"
+page << "update_list_handler('all_pages','selected_ids');"
+page.sortable('all_pages', :url => reorder_pages_url, :complete => "update_list('all_pages','selected_ids');")

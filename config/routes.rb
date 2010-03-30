@@ -19,6 +19,13 @@ ActionController::Routing::Routes.draw do |map|
    category.resources :products, :controller => :category_products, :only => [:index,:create,:destroy], :collection => {:reorder => :post, :remove =>:delete}
   end
   
+  # pages have products and images 
+  map.resources :pages, :collection => {:reorder => :post, :remove => :delete}  do |page|
+   page.resources :images,   :controller => :page_images,   :only => [:index,:create,:destroy], :collection => {:reorder => :post, :remove =>:delete}
+   page.resources :products, :controller => :page_products, :only => [:index,:create,:destroy], :collection => {:reorder => :post, :remove =>:delete}
+  end
+ 
+
   # suppliers have products
   map.resources :suppliers, :collection => {:reorder => :post, :remove => :delete} do |supplier|
       supplier.resources :products, 

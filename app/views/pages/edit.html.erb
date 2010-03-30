@@ -1,0 +1,22 @@
+<%= page_title_helper detail_heading(@page.name) %>
+<%= page_description_helper h(@page.description)   %>
+<%= page_keywords_helper h(@page.description)%>
+<%= page_navigation_helper %>
+
+<% content_for :header_content_extra do %>
+  | <%= link_to 'New Page', new_page_path -%> | <%= link_to 'Back to pages', pages_path -%> 
+<% end -%>
+
+<% content_for :content_frame do -%>
+  
+  <%= pages_breadcrumb(@page) -%>
+  
+  <% remote_form_for :page, :url => remove_pages_path, :html => {:method => :delete, :id=>'delete-form'} do |f| %>
+    <%= hidden_field_tag "selected_ids", @page.id %>
+    <%= submit_tag 'Remove' %>
+ <%end%>
+  
+ <%= render :partial => 'form', :locals => {:page => @page} %>
+
+ <% end -%>
+

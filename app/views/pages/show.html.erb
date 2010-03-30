@@ -1,0 +1,31 @@
+<%= page_title_helper %Q{Pages for #{ h(@page.long_name) } } %>
+<%= page_description_helper %Q{ #{h(@page.name)} described as #{h(@page.description)} listing of pages belonging to #{h(@page.name)} } %>
+<%= page_keywords_helper @pages.map(&:name).join(",") %>
+
+<%= side_menu_helper @page.pages, :title => "<h6>Pages (#{@page.pages.size})</h6>" %>
+<%= side_menu_helper @page.images,     :title => "<h6>Images (#{@page.images.size})</h6>" %>
+<%= side_menu_helper @page.products,  :title => "<h6>Products (#{@page.products.size})</h6>" %>
+
+<% content_for :header_content_extra do %>
+ | <%= link_to_remote 'Edit Page', 
+  { :url =>  edit_page_path(@page) ,
+    :method => :get,
+    :update => 'all_pages', 
+    :position => :top
+  }, 
+  :href => edit_page_path(@page) %>
+<% end -%>
+
+<% content_for :content_frame do %>
+<%= render:partial => 'searches/form' %>
+<div id="links_bar"></div>
+<div id='placeholder'>
+  <%= pages_list_helper [@page],reorder_pages_url %> 
+</div>
+<% end %>
+
+
+<% content_for :page_list_footer do -%>
+   <%= will_paginate @pages %>
+<% end -%>
+<%= page_links(@page) %>

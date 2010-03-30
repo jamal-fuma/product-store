@@ -1,0 +1,10 @@
+<%= page_title_helper 'Pages Home' %>
+<%= page_description_helper 'Pages Home, listing of all parent pages' %>
+<%= page_keywords_helper @pages.map(&:name).join(",") %>
+
+<% content_for :content_frame do %>
+<%= render  :partial => 'searches/form' %>
+<div id='placeholder'>
+  <%= pages_list_helper(@pages,@reorder_url) %>
+</div>
+<% end %> 

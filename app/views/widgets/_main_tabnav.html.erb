@@ -15,6 +15,11 @@ render_tabnav :main,
               :generate_css => false do 
     
   add_tab do |t|
+    t.named 'Pages'
+    t.links_to :controller => 'pages'
+  end
+
+  add_tab do |t|
     t.named 'Products'
     t.links_to :controller => 'products'
   end
