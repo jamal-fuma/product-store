@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091030063453) do
+ActiveRecord::Schema.define(:version => 20100329172614) do
 
   create_table "bugs", :force => true do |t|
     t.integer  "user_id",                                    :null => false
@@ -82,6 +82,18 @@ ActiveRecord::Schema.define(:version => 20091030063453) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "pages", :force => true do |t|
+    t.integer  "parent_id",   :limit => 8
+    t.integer  "position"
+    t.string   "name",        :limit => 64,  :default => "",                                      :null => false
+    t.string   "description", :limit => 512, :default => "this description needs to be replaced", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["parent_id", "name"], :name => "index_pages_on_parent_id_and_name", :unique => true
+  add_index "pages", ["parent_id", "position"], :name => "index_pages_on_parent_id_and_position"
 
   create_table "product_images", :force => true do |t|
     t.integer  "image_id"

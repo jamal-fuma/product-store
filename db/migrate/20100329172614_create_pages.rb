@@ -2,7 +2,7 @@ class CreatePages < ActiveRecord::Migration
   def self.up
     create_table :pages do |t|
       t.integer :parent_id,   :limit =>   6,  :null => true
-      t.integer :position,    :limit => 10,   :null => false
+      t.integer :position,    :limit => 10
       t.string  :name,        :limit =>  64,  :null => false, :default => ''
       t.string  :description, :limit => 512,  :null => false, :default => 'this description needs to be replaced'
       t.timestamps
@@ -23,4 +23,3 @@ class CreatePages < ActiveRecord::Migration
     end
   end     
 end
-
