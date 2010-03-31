@@ -194,6 +194,7 @@ ul.shared-list
 
 #user-bar
 {
+  padding-left:20px;
   text-align:left;
 }
 #user-bar .col a
