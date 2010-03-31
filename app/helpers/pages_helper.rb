@@ -46,7 +46,7 @@ def page_row_helper(page,opts={})
   content << column_helper(:class => 'page col-quantity', :content=>link_to( page.children.size,page_path(page)))
   content << column_helper(:class => 'page col-quantity', :content=>link_to(page.images.size,page_images_path(page)))
   content << column_helper(:class => 'page col-quantity', :content=>link_to(page.products.size,page_products_path(page)))
-  content << photo_column_helper(page.images, :image => opts[:image],:class=>'page col-image', :content => link_to('Add image..',edit_page_path(page)))
+  content << photo_column_helper(page.images, :image => opts[:image],:class=>'page col-image', :content => link_to('Add image..',page_images_path(page)))
 
   content_tag('dl',content,:class => opts[:class])
 end
