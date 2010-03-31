@@ -39,8 +39,8 @@
 <%= page_navigation_helper new_page_link_helper %>
    <% end -%>
             <div id="content"  class="spacer">
-            <p> <%=  flash[:notice] %></p>
             <% tabnav :main do -%>            
+                        <p><%=  flash[:notice] %></p>
                         <%= yield :sidebar_frame -%>
                         <%= yield :content_frame -%>
              <% end -%>
