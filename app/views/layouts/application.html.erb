@@ -30,7 +30,7 @@
 	<%= framed_content_tag(:id => 'title'){ @helper.page_title_helper } %>	
 	</div>
         <div id="content">
-            <p><%= flash[:notice] || " "} %></p>
+            <p><%= flash[:notice] || " " %></p>
             <% tabnav :main do %>
             <%= framed_content_tag(:id => 'menu_frame',:content_title => 'navigation'){  menu_list_tag } %>
               <%= yield %>
