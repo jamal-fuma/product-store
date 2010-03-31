@@ -300,24 +300,25 @@ table.results .odd-row td{
 }
 
 .main_tabnav li span.disabled {
-color: #888888;
-background: #FAFAFA;
-border: 0.1em solid grey;
-        border-bottom: none;
-padding: 2px 5px 0px 5px;
-margin: 0;
-        text-decoration: none;}
+  color: #888888;
+  background: #FAFAFA;
+  border-bottom: 0.1em solid grey;
+  padding: 2px 5px 0px 5px;
+  margin: 0;
+  text-decoration: none;
+}
 
-        .main_tabnav a, main_tabnav a.active {
-color: #000000;
-background: #EEEEEE;
-            font-weight: bold;
-border: 0.1em solid grey;
-padding: 2px 5px 0px 5px;
-margin: 0;
-        text-decoration: none; }
+.main_tabnav a, main_tabnav a.active {
+  color: #000000;
+  background: #EEEEEE;
+  font-weight: bold;
+  border: 0.1em solid grey;
+  padding: 2px 5px 0px 5px;
+  margin: 0;
+  text-decoration: none;
+}
 
-        .main_tabnav a.active {
+.main_tabnav a.active {
 background: #FFFFFF;
             border-bottom: 0.1em solid grey; 
 }
