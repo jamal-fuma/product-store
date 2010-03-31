@@ -19,7 +19,9 @@ h3 { font-size: 14px; }
 h4 { font-size: 12px; } 
 h5 { font-size: 11px; } 
 
-
+p {
+  padding-bottom:10px;
+}
 
 body {
   background:#d6d6d6;   /* nice grey background from the empty space */
@@ -82,7 +84,7 @@ li a:hover , #header a:hover {
 div.spacer
 {
     width:99%;
-    padding-top:10px;
+    padding-top:20px;
     border-top: solid #d6d6d6 0.1em;
 }
 
