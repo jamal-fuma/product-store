@@ -46,7 +46,7 @@ def category_row_helper(category,opts={})
   content << column_helper(:class => 'category col-quantity', :content=>link_to( category.children.size,category_path(category)))
   content << column_helper(:class => 'category col-quantity', :content=>link_to(category.images.size,category_images_path(category)))
   content << column_helper(:class => 'category col-quantity', :content=>link_to(category.products.size,category_products_path(category)))
-  content << photo_column_helper(category.images, :image => opts[:image],:class=>'category col-image', :content => link_to('Add image..',edit_category_path(category)))
+  content << photo_column_helper(category.images, :image => opts[:image],:class=>'category col-image', :content => link_to('Add image..',category_images_path(category)))
 
   content_tag('dl',content,:class => opts[:class])
 end
