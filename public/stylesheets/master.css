@@ -281,12 +281,9 @@ table.results .odd-row td{
 
 /** Tabbed Nav styles **/
 .main_tabnav {
-  color: #000;
-  border-bottom: 0.1em solid grey;
-  margin: 13px 0px 0px 0px;
-  padding: 0px;
   z-index: 1;
-  padding-left: 0px;
+  padding-left: 20px;
+  width: 928px;
 }
 
 .main_tabnav ul {
