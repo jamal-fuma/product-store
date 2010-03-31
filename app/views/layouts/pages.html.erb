@@ -13,47 +13,27 @@
         
         <%= yield :page_scripts -%>
    <%= javascript_include_tag :defaults -%>
-   <%= stylesheet_link_tag 'master' -%>
    <%= stylesheet_link_tag 'shared' -%>
    <%= stylesheet_link_tag 'page' -%>
    <%= stylesheet_link_tag 'image' -%>
    <%= stylesheet_link_tag 'product' -%>
+   <%= stylesheet_link_tag 'fuma' -%>
    <%= javascript_include_tag 'page' -%>
 </head>
     
 <body>
     <div id="wrapper">
-            <div id="header"  class="spacer">
-                    <!-- right pane -->
-                    <div id="page_frame">
-                    <div class="inner_frame">
-                        <img alt="Page_white" src="/images/page_white.png?1252705923" />
+      <div id="header" class="naviagtion">
+                    <!-- left pane --> 
+                    <%= link_to(image_tag("fuma_logo_299.png"),"/") %>
                         <%= yield :page_frame -%>
-                    </div>
-                    </div>
-
-                    <!-- left pane -->
-                    <div id="client_frame">
-                    <div class="inner_frame">
                         <%= render(:partial => 'users/user_bar') -%>
-                        <%= yield :client_frame -%>
-                    </div>
-                    </div>
-            </div>
-            
-            <div id="masthead"  class="spacer">
-                    <!-- right pane -->
-                    <div id="logo_frame">
-                    <div class="inner_frame">
-                        <a href="/"><img alt="Fuma_logo_col" src="/images/fuma_logo_col.png?1252705923" /></a>
-                    </div>
-                    </div>
-                    <!-- left pane -->
-                    <div id="menubar_frame">
-                    <div class="inner_frame">
+                        <div>
+                          <%= yield :client_frame -%>
+                        </div>
+                        <div>
                         <%= yield :menubar_frame -%>
-                    </div>
-                    </div>
+                        </div>
             </div>
 <% content_for :header_content_extra do %>
 <%= page_navigation_helper new_page_link_helper %>
@@ -61,34 +41,16 @@
             <div id="content"  class="spacer">
             <p> <%=  flash[:notice] %></p>
             <% tabnav :main do -%>            
-                <div id="menu_frame">
-                <div class="inner_frame">
                         <%= yield :sidebar_frame -%>
-                </div>
-                </div>
-                 <div id="content_frame">
-                <div class="inner_frame">
                         <%= yield :content_frame -%>
-                </div>
-                </div>
              <% end -%>
-            </div>
-
-
-            <div id="repeatnav" class="spacer">
                   <%= yield :repeatnav_frame -%>
-            </div>
-
-            <div class="spacer">
-            <div class="">
                 <p>&copy; 2009 FumaSoftware Limited - All Rights Reserved.</p>
-            </div>
             </div>
     </div>
 
     <div id="script_control">
       <%= yield :inline_script -%>
     </div>
-
 </body>
 </html> 
