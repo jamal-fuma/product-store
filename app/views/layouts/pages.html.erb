@@ -17,13 +17,13 @@
    <%= stylesheet_link_tag 'page' -%>
    <%= stylesheet_link_tag 'image' -%>
    <%= stylesheet_link_tag 'product' -%>
-   <%= stylesheet_link_tag 'fuma' -%>
+   <%= stylesheet_link_tag 'master' -%>
    <%= javascript_include_tag 'page' -%>
 </head>
     
 <body>
     <div id="wrapper">
-      <div id="header" class="naviagtion">
+      <div id="header">
                     <!-- left pane --> 
                     <%= link_to(image_tag("fuma_logo_299.png"),"/") %>
                         <%= yield :page_frame -%>

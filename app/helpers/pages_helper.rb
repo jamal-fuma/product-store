@@ -58,6 +58,7 @@ def page_links(page)
       <li>#{link_to("Edit #{h page.name}", edit_page_path(page))}</li>
       <li>#{button_to("Delete #{h page.name}", page, :method => :delete, :title =>"Delete #{h page.name}")}</li>
     </ul>
+    </div>
     EOS
   end
 end

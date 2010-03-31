@@ -194,11 +194,11 @@ ul.shared-list
 
 #user-bar
 {
-  text-align:right;
+  text-align:left;
 }
 #user-bar .col a
 {
- text-align:right;
+ text-align:left;
  vertical-align:top;
 }
 #user-bar .col .nickname
@@ -211,7 +211,7 @@ ul.shared-list
 
 #user-bar.row .col
 {
-  text-align:right;
+  text-align:left;
   max-width:90%;
   min-width:1%;
 }

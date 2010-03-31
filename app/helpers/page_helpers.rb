@@ -112,18 +112,22 @@ def column_title_helper(opts={})
   content << opts[:title]
   column_helper :class => opts[:class], :content => content
 end
+
 def side_menu_helper(categories=nil,opts={})
   opts[:method] ||= :name
   content = opts[:title] || ""
+  content = <<EOS
+  <p class="menu_title">#{content}</p>
+EOS
+
   categories ||= Category.parents
   content_for :sidebar_frame do
-    <<-EOS  
-  <div class="spacer">
-    <p class="menu_title">#{content}</p>
+    <<-EOS
+    <div class="menubar">
     <ul class="menu">
     #{categories.each.map { |c| "<li>#{link_to(h(c.send(opts[:method])),(opts[:func] ? send(opts[:func],c) : c))}</li>" }.join("\n")}
     </ul>
-</div>
+    </div>
     EOS
   end
 end

@@ -294,7 +294,7 @@ table.results .odd-row td{
 .main_tabnav li {
   display: inline;
   overflow: hidden;
-  list-style-type: none; 
+  list-style-type: none;
 }
 
 .main_tabnav li span.disabled {
