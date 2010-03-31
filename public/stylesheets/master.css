@@ -42,8 +42,7 @@ a:hover {
 }
 li a:visited , li a, #header a, #header a:visited {
   text-decoration:none;
-  text-transform:capitalize;
-  font-weight:bold;
+  color: rgb(255,51,51);
 }
 li a:hover , #header a:hover { 
   text-decoration:underline;
