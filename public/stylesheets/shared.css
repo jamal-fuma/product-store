@@ -68,7 +68,6 @@
 li
 {
   clear:both;
-  margin-top:1px;
 }
 
 #menu_frame .inner_frame a
@@ -86,14 +85,17 @@ li
 .row .col
 {
   vertical-align: center;
-  margin-right:5px;
-  margin-left:5px;
+  margin-left:10px;
   display: inline-block;
   min-width:10%;
   max-width:30%;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.header { 
+  border-bottom :solid grey 0.1em;
 }
 
 .header .row,
@@ -162,8 +164,7 @@ ul.shared-list
 .shared-list .footer, .shared-list .footer a
 {
   /* white text on green */
-  background-color: #aaaaaa; 
-  height: 35px;
+  background-color: #cccccc; 
   color:#eee;
 }
 
