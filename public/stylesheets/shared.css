@@ -130,6 +130,11 @@ li
   text-align:center;
 }
 
+.shared-list {
+  padding-top: 10px;
+  list-style-type: none;
+}
+
 /* alternate background colours for list rows */
 .shared-list-even-row { 
   background-color: #F6F7F9;
@@ -157,8 +162,8 @@ ul.shared-list
 .shared-list .footer, .shared-list .footer a
 {
   /* white text on green */
-  background-color: #cccccc; 
-  height: auto;
+  background-color: #aaaaaa; 
+  height: 35px;
   color:#eee;
 }
 
@@ -197,8 +202,10 @@ ul.shared-list
 
 #user-bar
 {
-  padding-left:20px;
-  text-align:left;
+  padding-top: 20px;
+  padding-right: 20px;
+  text-align: right;
+  float: right;
 }
 #user-bar .col a
 {

@@ -50,6 +50,11 @@ a:hover {
   color: rgb(243,0,18);
   text-decoration: none;
 }
+
+li {
+  list-style-type: none;
+}
+
 li a:visited , li a, #header a, #header a:visited {
   
   text-decoration:none;
@@ -77,7 +82,7 @@ li a:hover , #header a:hover {
 
 #wrapper  {
   width:948px;
-  margin:0 auto;
+  margin:0 20px;
   padding-top:0px;
   padding-left:0px;
   padding-right:0px;
@@ -94,7 +99,6 @@ li a:hover , #header a:hover {
 
 div.spacer
 {
-    padding-top:20px;
 }
 
 
@@ -313,14 +317,14 @@ table.results .odd-row td{
   list-style-type: none;
   width:96px;
   margin-right: 20px;
-  background: #F6F7F2;
+  background: #FFFFFF;
   border-bottom: 0.1em solid #D0D1D3;
   height: 15px;
   padding-top: 5px;
 }
 
 .main_tabnav li.active {
-  background: rgb(255,255,250);
+  background: rgb(240,240,240);
   border-bottom: 0.1em solid grey; 
 }
 
