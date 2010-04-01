@@ -1,5 +1,6 @@
 class ImagesController < ApplicationController
   layout "images"
+  before_filter :check_for_cancel, :only => [:create,:update]
 
   # GET /images
   # GET /images

@@ -1,5 +1,6 @@
 class SuppliersController < ApplicationController
   layout "suppliers"
+  before_filter :check_for_cancel, :only => [:create,:update]
 
   # GET /suppliers
   # GET /suppliers
