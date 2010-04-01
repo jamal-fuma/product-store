@@ -7,11 +7,10 @@
 {
   max-width:10%;
   min-width:10%;
-  text-align:center;
+  text-align: left;
 }
 
 #page_description
 {
-  font-size:0.8em;
-  height:275px;
+  height:200px;
 }

@@ -170,7 +170,7 @@ div.spacer
 #menubar_frame img, #client_frame a { float:right; }
 
 #page_name{
-  font-size: 18px;
+  font-size: 14px;
 }
 
 /********
@@ -201,7 +201,7 @@ legend {
 
 fieldset {
   border:solid gray 1px;
-  padding: 15px 0 0 5px;
+  padding: 5px 0 0 5px;
   margin: 5px 0 0 5px;
 }
 
@@ -222,8 +222,8 @@ fieldset .clearfix textarea,
 fieldset .clearfix select {
   float:left;
   background-color:#eee;
-  width:75%;
-  font-size:14px;
+  width:90%;
+  font-size:12px;
   
 }
 
@@ -231,11 +231,10 @@ fieldset .clearfix .fieldWithErrors label,
 fieldset .clearfix label {
   float:left;
   width:10em;
-  text-align:right;
-  margin-right:0.5em;
-  line-height:1.8em;
+  text-align: left;
+  line-height:20px;
   font-weight:bold;
-  font-size:14px;
+  font-size:12px;
 }
 
 /* hacks */
@@ -251,7 +250,22 @@ fieldset .clearfix label {
 .clearfix { display: inline-block; }
 html[xmlns] .clearfix { display: block; }
 
-.buttons { text-align:right; }
+.buttons input[type="submit"] {
+  text-align:left;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.editor_ok_button  {
+  padding: 5px;
+  font-size: 12px;
+  margin-right: 5px;
+  background-color: #4EA8B7;
+}
+
+.editor_cancel {
+  padding: 5px;
+}
 
 /* Nasty IE6 workaround */
 * html .clearfix { height: 1%; }
