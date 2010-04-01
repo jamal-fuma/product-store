@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_filter :check_for_cancel, :only => [:create,:update]
   # GET /pages
   # GET /pages.xml
   def index

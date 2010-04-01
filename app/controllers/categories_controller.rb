@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_filter :check_for_cancel, :only => [:create,:update]
+
   # GET /categories
   # GET /categories.xml
   def index
