@@ -9,11 +9,13 @@
   left:0;
   
   color: rgb(77,77,77);
-
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 { font-size: 1.2em; }
+h1 {
+  font-size: 1.2em;
+  padding-bottom: 10px;
+}
 h2 { font-size: 16px; }
 h3 { font-size: 14px; } 
 h4 { font-size: 12px; } 
@@ -47,15 +49,18 @@ a:hover {
   text-decoration: none;
 }
 li a:visited , li a, #header a, #header a:visited {
+  
   text-decoration:none;
-  color: rgb(255,51,51);
+  color: #4E58B7;
 }
 li a:hover , #header a:hover { 
   text-decoration: none;
 }
 #client_frame a { font-weight:bold; }
 
-
+#user-bar {
+  font-size: 1.2em;
+}
 
 
 /* Structural declarations
@@ -69,7 +74,7 @@ li a:hover , #header a:hover {
  */
 
 #wrapper  {
-  width:960px;
+  width:948px;
   margin:0 auto;
   padding-top:0px;
   padding-left:0px;
@@ -87,7 +92,6 @@ li a:hover , #header a:hover {
 
 div.spacer
 {
-    width:99%;
     padding-top:20px;
 }
 
@@ -100,15 +104,21 @@ div.spacer
  *  .menubar .menu - horizontal menu
  *
  */
+.menubar { 
+  padding-bottom: 10px;
+}
 
 .menubar .menu li {
-  font-weight:bold;
+  font-size: 1.2em;
+  font-weight: bold;
   margin-left:0.5em;
   /* IE6 ignores the first-child selector, so this nasty mess is the workaround */
   margin-left:expression(this.previousSibling == null ? '0px' : '0.5em') ;
 }
 
-.menubar ul.menu li, .menubar ul.menu  { display:inline; }
+.menubar ul.menu li, .menubar ul.menu  {
+  display: inline;
+}
 
 /* IE6 ignores the first-child selector, but all sane browsers pick it up */
 .menubar .menu li:first-child { margin:0; }
@@ -139,6 +149,7 @@ div.spacer
   min-height:570px;
   height:auto !important;
   height:570px;
+  padding-left: 20px;
 }
 
 #repeatnav.spacer {clear:both; height:30px; }
@@ -287,8 +298,7 @@ table.results .odd-row td{
 /** Tabbed Nav styles **/
 .main_tabnav {
   z-index: 1;
-  padding-left: 20px;
-  width: 928px;
+  width: 908px;
 }
 
 .main_tabnav ul {
@@ -303,14 +313,14 @@ table.results .odd-row td{
   list-style-type: none;
   width:96px;
   margin-right: 20px;
-  background: #EEEEEE;
+  background: #F6F7F2;
   border-bottom: 0.1em solid #D0D1D3;
   height: 15px;
   padding-top: 5px;
 }
 
 .main_tabnav li.active {
-  background: rgb(255,255,0);
+  background: rgb(255,255,250);
   border-bottom: 0.1em solid grey; 
 }
 
@@ -319,7 +329,7 @@ table.results .odd-row td{
 }
 
 .main_tabnav li.active:hover {
-  background: rgb(255,255,122);
+  background: rgb(255,255,242);
 }
 
 .main_tabnav li span.disabled {
@@ -352,8 +362,9 @@ color: #4EA8B7; }
 
 .main_tabnav_content {
 background: #FFFFFF;
-padding: 20px;
-border: 0.1em solid grey;
+padding-top: 20px;
+padding-bottom: 20px;
+padding-right: 20px;
         border-top: none;
         border-left: none;
         border-bottom: none;

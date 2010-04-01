@@ -55,6 +55,8 @@
 .shared-list-titles .row,
 .shared-list-titles .row .col
 {
+  
+  font-size: 1.2em;
   background-color: #00A7A5; 
   color:#fff;
 }
@@ -83,14 +85,16 @@ li
 .row .col-image,
 .row .col
 {
-  vertical-align:top;
+  vertical-align: center;
   font-size:0.7em;
-  margin-right:1px;
-  margin-left:2px;
-  display:inline-block;
+  margin-right:5px;
+  margin-left:5px;
+  display: inline-block;
   min-width:10%;
   max-width:30%;
-  text-align:center;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .header .row,
@@ -156,7 +160,9 @@ ul.shared-list
 {
   /* white text on green */
   background-color: #00A7A5; 
+  height: 20px;
   color:#eee;
+  font-size: 1.2em;
 }
 
 /* headers */
@@ -183,6 +189,7 @@ ul.shared-list
 .shared-list .content
 {
 
+  font-size: 12px;
 }
 
 /* footers */
