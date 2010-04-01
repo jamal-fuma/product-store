@@ -20,6 +20,10 @@
    <%= stylesheet_link_tag 'master' -%>
    <%= javascript_include_tag 'page' -%>
 </head>
+
+<% content_for :header_content_extra do %>
+    <%= page_navigation_helper ' ' %>
+<% end -%>
     
 <body>
     <div id="wrapper">
@@ -29,19 +33,19 @@
                         <%= yield :page_frame -%>
                         <%= render(:partial => 'users/user_bar') -%>
                         <div>
-                          <%= yield :client_frame -%>
-                        </div>
-                        <div>
-                        <%= yield :menubar_frame -%>
+                          <%= yield :menubar_frame -%>
+
                         </div>
             </div>
-<% content_for :header_content_extra do %>
-<%= page_navigation_helper new_page_link_helper %>
-   <% end -%>
             <div id="content"  class="spacer">
             <% tabnav :main do -%>            
-                        <p><%=  flash[:notice] %></p>
-                        <%= yield :sidebar_frame -%>
+              <%= yield :client_frame -%>                         
+              <p><%=  flash[:notice] %></p>
+              <%= yield :sidebar_frame -%>
+              <!--
+              yield :header_content_extra
+              yield :header_content_follow 
+              -->
                         <%= yield :content_frame -%>
              <% end -%>
                   <%= yield :repeatnav_frame -%>

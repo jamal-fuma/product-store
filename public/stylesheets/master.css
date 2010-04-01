@@ -13,19 +13,21 @@
   font-family:Arial, sans-serif;
 }
 
-h1 { font-size: 18px; }
+h1 { font-size: 1.2em; }
 h2 { font-size: 16px; }
 h3 { font-size: 14px; } 
 h4 { font-size: 12px; } 
 h5 { font-size: 11px; } 
 
 p {
+  font-size: 1.2em;
+  line-height: 1.25em;
   padding-bottom:10px;
 }
 
 body {
   background:#d6d6d6;   /* nice grey background from the empty space */
-  font-size: 14px;
+  font-size: 62.5%;
 }
 
 .inplaceeditor-form
@@ -347,6 +349,7 @@ border: 0.1em solid grey;
 
 #main_tabnav,
 #main_tabnav UL {
+  font-size: 1.2em;
 }
 
 
