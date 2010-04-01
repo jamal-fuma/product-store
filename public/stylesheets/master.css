@@ -25,7 +25,6 @@ h4 { font-size: 12px; }
 h5 { font-size: 11px; } 
 
 p {
-  font-size: 1.2em;
   line-height: 1.25em;
   padding-bottom:10px;
 }
@@ -62,7 +61,7 @@ li a:hover , #header a:hover {
 #client_frame a { font-weight:bold; }
 
 #user-bar {
-  font-size: 1.2em;
+  color: #CCCCCC;
 }
 
 
@@ -112,7 +111,6 @@ div.spacer
 }
 
 .menubar .menu li {
-  font-size: 1.2em;
   font-weight: bold;
   margin-left:0.5em;
   /* IE6 ignores the first-child selector, so this nasty mess is the workaround */

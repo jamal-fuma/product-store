@@ -92,22 +92,21 @@ li
   min-width:10%;
   max-width:30%;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .header .row,
 .header .row dd
 {
-  font-size:0.9em;
-  background-color: #00A7A5; 
+  background-color: #aaaaaa; 
   color:#eee;
 }
 
 .row .col-name
 {
-  font-size:0.7em;
-  max-width:20%;
+  margin-left: 10px;
+  gax-width:20%;
   min-width:20%;
   text-align:left;
 }
@@ -133,7 +132,7 @@ li
 
 /* alternate background colours for list rows */
 .shared-list-even-row { 
-  background-color :#F0F7F9;
+  background-color: #F6F7F9;
 }
 .shared-list-odd-row { 
 }
@@ -158,10 +157,9 @@ ul.shared-list
 .shared-list .footer, .shared-list .footer a
 {
   /* white text on green */
-  background-color: #00A7A5; 
-  height: 20px;
+  background-color: #cccccc; 
+  height: auto;
   color:#eee;
-  font-size: 1.2em;
 }
 
 /* headers */
