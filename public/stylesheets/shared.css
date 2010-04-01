@@ -86,7 +86,6 @@ li
 .row .col
 {
   vertical-align: center;
-  font-size:0.7em;
   margin-right:5px;
   margin-left:5px;
   display: inline-block;
@@ -189,7 +188,6 @@ ul.shared-list
 .shared-list .content
 {
 
-  font-size: 12px;
 }
 
 /* footers */
