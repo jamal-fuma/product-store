@@ -296,9 +296,10 @@ table.results .odd-row td{
 }
 
 .main_tabnav li {
-  display: inline;
+  display: inline-block;
   overflow: hidden;
   list-style-type: none;
+  width:96px;
 }
 
 .main_tabnav li span.disabled {
@@ -313,8 +314,7 @@ table.results .odd-row td{
 .main_tabnav a, main_tabnav a.active {
   color: #000000;
   background: #EEEEEE;
-  font-weight: bold;
-  padding: 5px 20px 5px 5px;
+  padding: 5px 20px 5px 0px;
   margin: 0;
   text-decoration: none;
 }
