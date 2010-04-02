@@ -89,7 +89,7 @@ module Widgets
           concat content_tag('span', tab.name, tab_html)
         
         elsif !tab.link.empty?
-          concat link_to(content_tag('span',tab.name,{:style => 'border:solid red 0.1em;'}),tab.link, tab_html)
+          concat link_to(content_tag('span',tab.name,{:style =>'display:block;'}),tab.link, tab_html)
 
         elsif tab.remote_link
           success = "document.getElementsByClassName('active', $('" + @_tabnav.html[:id]+ "')).each(function(item){item.removeClassName('active');});"
