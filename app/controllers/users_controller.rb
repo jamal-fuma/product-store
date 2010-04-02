@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     logout_keeping_session!
     @user = User.new(params[:user])
-    @user.role_id = Role.find_by_name(User.all.empty? ? "Administrator" : "User").id
+     #   @user.role_id = Role.find_by_name(User.all.empty? ? "Administrator" : "User").id
     success = @user && @user.save
     if success && @user.errors.empty?
             # Protects against session fixation attacks, causes request forgery
@@ -27,8 +27,9 @@ class UsersController < ApplicationController
   end
 protected
   def admin_user?
-   return true if User.all.empty?
-   (self.current_user && self.current_user.role && self.current_user.admin? )
+   return true
+   #if User.all.empty?
+   #(self.current_user && self.current_user.role && self.current_user.admin? )
   end
   def guard_action
     redirect_to '/' unless admin_user?
