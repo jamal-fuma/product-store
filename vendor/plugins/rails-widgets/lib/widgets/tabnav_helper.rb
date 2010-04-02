@@ -84,10 +84,12 @@ module Widgets
         li_options[:class] = tab_html[:class]
 
         concat tag('li', li_options, true)
+
         if tab.disabled? || (tab.link.empty? && tab.remote_link.nil?)
           concat content_tag('span', tab.name, tab_html)
+        
         elsif !tab.link.empty?
-          concat link_to(tab.name, tab.link, tab_html)
+          concat content_tag('span',link_to(tab.name, tab.link, tab_html), tab_html)
         elsif tab.remote_link
           success = "document.getElementsByClassName('active', $('" + @_tabnav.html[:id]+ "')).each(function(item){item.removeClassName('active');});"
           success += "$('#{tab.html[:id]}').addClassName('active');"
@@ -101,7 +103,9 @@ module Widgets
           }
           concat link_to_remote(tab.name, remote_opts.merge(tab.remote_link), tab_html)
         else
+        
           raise "WHAT THE HELL?"
+        
         end
         concat "</li>\n"
       end
