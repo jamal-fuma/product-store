@@ -1,5 +1,5 @@
 <%= page_title_helper %Q{Pages for #{ h(@page.long_name) } } %>
-
+<%= page_crumb_helper(@page, :title => "Pages for ")  %>
 
 <%= page_description_helper %Q{ #{h(@page.name)} described as #{h(@page.description)} listing of pages belonging to #{h(@page.name)} } %>
 <%= page_keywords_helper @pages.map(&:name).join(",") %>
@@ -8,6 +8,7 @@
 <%= side_menu_helper @page.images,     :title => "<h6>Images (#{@page.images.size})</h6>" %>
 <%= side_menu_helper @page.products,  :title => "<h6>Products (#{@page.products.size})</h6>" %>
 
+<!-- WARNING ANYTHING INSIDE THIS BLOCK IS NOT BEING DISPLAYED -->
 <% content_for :header_content_extra do %>
  | <%= link_to_remote 'Edit Page', 
   { :url =>  edit_page_path(@page) ,
@@ -19,14 +20,16 @@
 <% end -%>
 
 <% content_for :content_frame do %>
-<div id="links_bar"></div>
-<div id='placeholder'>
-  <%= pages_list_helper [@page],reorder_pages_url %> 
-</div>
+  <div id="links_bar"></div>
+  
+  <div id='placeholder'>
+    <%= pages_list_helper [@page],reorder_pages_url %> 
+  </div>
 <% end %>
 
 
 <% content_for :page_list_footer do -%>
    <%= will_paginate @pages %>
-<% end -%>
+ <% end -%>
+
 <%= page_links(@page) %>

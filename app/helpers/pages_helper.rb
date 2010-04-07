@@ -1,11 +1,13 @@
 module PagesHelper
   include PageHelpers
-  def pages_breadcrumb(page)
-   ret = link_to('Pages', pages_path)
-   unless page.parent.nil?
-      ret << " &gt; #{link_to(h(page.parent.name),page.parent)}"
+
+  def pages_breadcrumb(page,opts={})
+    opts[:class]    ||= 'crumb'
+    ret = link_to('Navigation:Pages', pages_path)
+    unless page.parent.nil?
+      ret << ": #{link_to(h(page.parent.name),page.parent)} :"
     end
-    ret << " &gt; #{link_to(h(page.name),page)}"
+    ret << ": #{link_to(h(page.name),page)}"
     return ret
   end
 

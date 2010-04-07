@@ -9,21 +9,24 @@ module PageHelpers
     content_for :page_title do
       title
     end
-    page_crumb_helper(title)
    end
 
   def page_crumb_helper(crumb,opts={}) 
-      # Which tag to wrap the generated content with
-      opts[:tag]      ||= :h1
+    # Which tag to wrap the generated content with
+    opts[:tag]      ||= :p
 
-      # Yield block used when appending the generated content
-      opts[:target]   ||= :title_crumb 
+    # Which method to call on crumb's for link text
+    opts[:method]   ||= :name
 
-      # Paste the 'crumb' into the 'target' block wrapping
-      #  in a generated html tag of 'tag'
-      content_for opts[:target] do
-        content_tag(opts[:tag],crumb)
-      end
+    # Yield block used when appending the generated content
+    opts[:target]   ||= :title_crumb 
+
+    # Paste the 'crumb' into the 'target' block wrapping
+    #  in a generated html tag of 'tag'
+    content_for opts[:target] do
+      # title prefixing bread crumbs
+        "<ul><li>#{opts[:title] || ""} #{pages_breadcrumb(crumb,opts)}</li> </ul>"
+    end
   end
 
   def page_description_helper(description)
