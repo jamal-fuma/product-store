@@ -36,10 +36,14 @@
                           <%= yield :menubar_frame -%>
 
                         </div>
-            </div>
+                      </div>
             <div id="content"  class="spacer">
             <% tabnav :main do -%>            
-              <%= yield :client_frame -%>                         
+                      <div class="thick_bar_4col"></div>
+                      <div id="client_frame">
+                        <%= yield :client_frame -%>
+                      </div>
+
               <p><%=  flash[:notice] %></p>
               <%= yield :sidebar_frame -%>
               <!--
@@ -49,7 +53,7 @@
                         <%= yield :content_frame -%>
              <% end -%>
                   <%= yield :repeatnav_frame -%>
-                <p>&copy; 2009 FumaSoftware Limited - All Rights Reserved.</p>
+                  <p>&copy; 2009 FumaSoftware Limited - All Rights Reserved.</p>
             </div>
     </div>
 

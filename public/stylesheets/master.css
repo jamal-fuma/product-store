@@ -30,7 +30,7 @@ p {
 }
 
 body {
-  background:#d6d6d6;   /* nice grey background from the empty space */
+  background:#333333;   /* nice grey background from the empty space */
   font-size: 1.2em;
 }
 
@@ -148,7 +148,9 @@ div.spacer
  *  menu_frame     | content_frame
  *
  */
-#header.spacer, #category_frame, #client_frame { height:70px; }
+#header.spacer, #category_frame, #client_frame {
+ /* height:70px;*/
+}
 #masthead.spacer, #logo_frame, #menubar_frame { height:100px; }
 #content.spacer, #menu_frame, #content_frame { 
   /* filthy min-height work around for IE6 */
@@ -327,7 +329,6 @@ table.results .odd-row td{
 
 .main_tabnav li {
   display: inline-block;
-  overflow: hidden;
   list-style-type: none;
   width:96px;
   margin-right: 20px;
@@ -393,4 +394,13 @@ padding-right: 20px;
 #main_tabnav UL {
 }
 
+.thick_bar_4col, .thick_bar_2col, .thick_bar_1col, .thick_bar_3rdcol {
+  background:url("../images/grey_dia.png") repeat-x scroll 0 0 transparent;
+  display:block;
+  height:4px;
+}
 
+.thick_bar_4col {
+  width:908px;
+  padding-bottom: 20px;
+}
