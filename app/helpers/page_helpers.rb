@@ -4,14 +4,28 @@ module PageHelpers
       keywords
     end
   end
+
   def page_title_helper(title)
     content_for :page_title do
       title
     end
-    content_for :title_crumb do
-      content_tag(:h1,title)
-    end
+    page_crumb_helper(title)
+   end
+
+  def page_crumb_helper(crumb,opts={}) 
+      # Which tag to wrap the generated content with
+      opts[:tag]      ||= :h1
+
+      # Yield block used when appending the generated content
+      opts[:target]   ||= :title_crumb 
+
+      # Paste the 'crumb' into the 'target' block wrapping
+      #  in a generated html tag of 'tag'
+      content_for opts[:target] do
+        content_tag(opts[:tag],crumb)
+      end
   end
+
   def page_description_helper(description)
     content_for :page_description do
       description
