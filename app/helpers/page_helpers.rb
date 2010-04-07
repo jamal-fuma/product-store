@@ -8,7 +8,7 @@ module PageHelpers
     content_for :page_title do
       title
     end
-    content_for :client_frame do
+    content_for :title_crumb do
       content_tag(:h1,title)
     end
   end
@@ -119,17 +119,19 @@ def side_menu_helper(categories=nil,opts={})
   content = <<EOS
   <p class="menu_title">#{content}</p>
 EOS
-
+  
   categories ||= Category.parents
-  content_for :sidebar_frame do
-    <<-EOS
-    <div class="menubar">
-    <ul class="menu">
-    #{categories.each.map { |c| "<li>#{link_to(h(c.send(opts[:method])),(opts[:func] ? send(opts[:func],c) : c))}</li>" }.join("\n")}
-    </ul>
-    </div>
-    EOS
-  end
+  unless( categories.empty? )
+    content_for :sidebar_frame do
+      <<-EOS
+      <div class="menubar">
+      <ul class="menu">
+      #{categories.each.map { |c| "<li>#{link_to(h(c.send(opts[:method])),(opts[:func] ? send(opts[:func],c) : c))}</li>" }.join("\n")}
+      </ul>
+      </div>
+      EOS
+    end
+  end # unless categories.empty?
 end
 
 end
