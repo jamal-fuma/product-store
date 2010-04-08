@@ -62,7 +62,7 @@ li a:visited , li a, #header a, #header a:visited {
 li a:hover , #header a:hover { 
   text-decoration: none;
 }
-#client_frame a { font-weight:bold; }
+#title_crumb a { font-weight:bold; }
 
 #user-bar {
   color: #CCCCCC;
@@ -72,7 +72,7 @@ li a:hover , #header a:hover {
 /* Structural declarations
  *
  * #wrapper
- *    #header with category_frame and client_frame
+ *    #header with category_frame and title_crumb
  *    #masthead with logo_frame and menubar_frame
  *    #content with menu_frame and content_frame
  *    #repeatnav
@@ -143,12 +143,12 @@ div.spacer
 /** Frames, 
  *
  *
- *  category_frame | client_frame
+ *  category_frame | title_crumb
  *  logo_frame     | menubar_frame
  *  menu_frame     | content_frame
  *
  */
-#header.spacer, #category_frame, #client_frame {
+#header.spacer, #category_frame, #title_crumb {
  /* height:70px;*/
 }
 #masthead.spacer, #logo_frame, #menubar_frame { height:100px; }
@@ -171,7 +171,13 @@ div.spacer
 }
 
 /* tweaks to align to the right side of the page */
-#menubar_frame img, #client_frame a { float:right; }
+#menubar_frame img, #title_crumb a {
+  align:left;
+}
+
+#title_crumb li { 
+  padding-bottom: 10px;
+}
 
 #page_name{
   font-size: 14px;
@@ -319,7 +325,7 @@ table.results .odd-row td{
 /** Tabbed Nav styles **/
 .main_tabnav {
   z-index: 1;
-  width: 908px;
+  width: 928px;
 }
 
 .main_tabnav ul {
@@ -331,7 +337,7 @@ table.results .odd-row td{
   display: inline-block;
   list-style-type: none;
   width:96px;
-  margin-right: 20px;
+  margin-right: 16px;
   background: #FFFFFF;
   border-bottom: 0.1em solid #D0D1D3;
   height: 15px;
