@@ -318,7 +318,7 @@ a:hover { }
 /* Structural declarations
  *
  * #wrapper
- *		 #header with category_frame and client_frame - replaced by logo_frame and tools_frame
+ *		 #header with category_frame and title_crumb - replaced by logo_frame and tools_frame
  *		 #masthead with logo_frame and menubar_frame - replaced by navigation
  *		 #content with menu_frame and content_frame - replaced by content, wk_description, client_list
  *		 #repeatnav
@@ -346,7 +346,7 @@ div.spacer { padding-top: 20px; }
 /** Frames, 
  *
  *
- *	category_frame | client_frame
+ *	category_frame | title_crumb
  *	logo_frame		 | menubar_frame
  *	menu_frame		 | content_frame
  *
