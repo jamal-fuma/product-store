@@ -1,5 +1,4 @@
 Given /^a logged in user with a login of "([^\"]*)" and a password of "([^\"]*)"$/ do |login, password|
-
   user = User.find_by_login login
   user.destroy unless user.nil?
   visit '/signup'
