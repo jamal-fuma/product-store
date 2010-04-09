@@ -3,14 +3,14 @@ module PagesHelper
 
   def pages_breadcrumb(page,opts={})
     opts[:class]    ||= 'crumb'
-    ret = link_to('Navigation:Pages', pages_path)
+    ret = link_to('Pages', pages_path)
     unless page.parent.nil?
-      ret << ": #{link_to(h(page.parent.name),page.parent)} :"
+      ret << " &gt; #{link_to(h(page.parent.name),page.parent)}"
     end
-    ret << ": #{link_to(h(page.name),page)}"
+    ret << " &gt; #{link_to(h(page.name),page)}"
+    end
     return ret
   end
-
 
 # title row for lists of pages
 def page_heading_helper(opts={})

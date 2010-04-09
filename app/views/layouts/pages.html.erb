@@ -44,16 +44,13 @@
                         <%= yield :title_crumb -%>
                       </div>
 
+            </div>
               <p><%=  flash[:notice] %></p>
               <%= yield :sidebar_frame -%>
-              <!--
-              yield :header_content_extra
-              yield :header_content_follow 
-              -->
-                        <%= yield :content_frame -%>
+              <%= yield :content_frame -%>
              <% end -%>
                   <%= yield :repeatnav_frame -%>
-                  <p>&copy; 2009 FumaSoftware Limited - All Rights Reserved.</p>
+                <p>&copy; 2010 FumaSoftware Limited - All Rights Reserved.</p>
             </div>
     </div>
 

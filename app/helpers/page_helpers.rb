@@ -136,7 +136,6 @@ def side_menu_helper(categories=nil,opts={})
   content = <<EOS
   <p class="menu_title">#{content}</p>
 EOS
-  
   categories ||= Category.parents
   unless( categories.empty? )
     content_for :sidebar_frame do
